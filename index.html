@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アニメエンタメニュースサイト</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* 管理画面用のスタイル */
+        #admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        #admin-panel.show {
+            display: block;
+        }
+        #admin-panel-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .news-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e2e8f0;
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            border-color: #cbd5e0;
+        }
+
+        .news-card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+
+        .news-card p {
+            font-size: 0.875rem;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+            flex-grow: 1;
+        }
+
+        .news-card a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .news-card a:hover {
+            color: #2563eb;
+        }
+
+        .news-card .publish-date {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            margin-top: 0.5rem;
+        }
+
+        #news-list-container {
+            display: none;
+        }
+
+        #news-list-container.show {
+            display: block;
+        }
+
+    </style>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-3xl font-semibold text-center text-blue-700 mb-8">アニメエンタメニュース</h1>
+
+    <div id="news-date-select" class="flex justify-center mb-8">
+        <label for="date-dropdown" class="mr-4 text-lg text-gray-700">日付を選択:</label>
+        <select id="date-dropdown" class="border border-gray-300 rounded-md shadow-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="">日付を選択してください</option>
+        </select>
+    </div>
+
+    <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    </div>
+
+    <div class="text-center mt-8">
+        <button id="admin-button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">管理画面</button>
+    </div>
+
+    <div id="admin-panel">
+        <div id="admin-panel-content">
+            <h2 class="text-2xl font-semibold mb-4">ニュース追加・編集</h2>
+            <form id="add-news-form" class="mb-6">
+                <div class="mb-4">
+                    <label for="news-date" class="block text-gray-700 text-sm font-bold mb-2">日付:</label>
+                    <input type="date" id="news-date" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="mb-4">
+                    <label for="news-title" class="block text-gray-700 text-sm font-bold mb-2">タイトル:</label>
+                    <input type="text" id="news-title" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="mb-4">
+                    <label for="news-url" class="block text-gray-700 text-sm font-bold mb-2">URL:</label>
+                    <input type="url" id="news-url" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="mb-4">
+                    <label for="news-summary" class="block text-gray-700 text-sm font-bold mb-2">概要:</label>
+                    <textarea id="news-summary" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="news-publish-date" class="block text-gray-700 text-sm font-bold mb-2">配信日:</label>
+                    <input type="date" id="news-publish-date" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">追加</button>
+            </form>
+            <div id="message-container" class="mt-4 text-yellow-600 font-semibold"></div>
+            <div id="news-list-container" class="mt-6">
+                <h3 class="text-lg font-semibold mb-2">登録済みニュース一覧</h3>
+                <ul id="news-list" class="border rounded-md p-4">
+                </ul>
+            </div>
+            <button id="toggle-news-list" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">非表示</button>
+            <button id="close-admin-panel" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">閉じる</button>
+        </div>
+    </div>
+
+    <script>
+        // localStorageからニュースデータを読み込む
+        let newsData = JSON.parse(localStorage.getItem('newsData')) || {
+            "2025年3月21日": [
+                {
+                    title: "転スラ×ロボットの学習漫画 掲載内容発表!AI(人工知能)ってなに?危なくないの?",
+                    url: "https://www.oricon.co.jp/news/2374110/full/",
+                    概要: "テレビアニメ『転スラ』とロボットのコラボ学習漫画『転生したらスライムだった件で学べるBOOK　ロボット』が、19日に発売されることが決定した。",
+                    配信日: "2025年3月14日",
+                    hidden: false
+                },
+                {
+                    title: "TOHO animation、新作アニメ発表へ 謎のほうき星…作品モチーフのビジュアル公開",
+                    url: "https://www.oricon.co.jp/news/2374050/",
+                    概要: "東宝が2012年に設立したアニメーションレーベル【TOHO animation】が、17日午後7時に新作アニメを発表することが14日、わかった。",
+                    配信日: "2025年3月14日",
+                    hidden: false
+                },
+                {
+                    title: "【万博】アニメイト新情報、POP-UP第1弾で『ヒロアカ』など 島本和彦氏が兄沢命斗描き下ろしも",
+                    url: "https://www.oricon.co.jp/news/2374170/",
+                    概要: "アニメイトは、大阪・関西万博(4月13日開幕、大阪・夢洲)に「アニメイト大阪・関西万博店」を出店する。POP-UPスペース第1弾は「ボンズストア」となることが明らかになった。",
+                    配信日: "2025年3月14日",
+                    hidden: false
+                },
+                {
+                    title: "『卓球少女』、中国発の卓球アニメを日本語吹替版で劇場上映 メインキャストに夏川椎菜&雨宮天ら",
+                    url: "https://www.oricon.co.jp/news/2374098/full/",
+                    概要: "中国発のアニメ『白色閃電 Pingpong！』の日本語吹替版劇場アニメ『卓球少女―閃光のかなたへ―』の制作が決定。あわせて5月16日から全国で公開されることが決定した。",
+                    配信日: "2025年3月14日",
+                    hidden: false
+                },
+                {
+                    title: "【日本アカデミー賞】最優秀アニメーション作品賞は『ルックバック』押山清高監督、宮崎駿監督との秘話を明かす",
+                    url: "https://www.oricon.co.jp/news/2374193/full/",
+                    概要: "「第48回 日本アカデミー賞」授賞式が14日、東京・グランドプリンスホテル新高輪にて開催され、最優秀アニメーション作品賞を『ルックバック』が受賞した。",
+                    配信日: "2025年3月14日",
+                    hidden: false
+                },
+                {
+                    title: "「第3回新潟国際アニメーション映画祭」が開幕 アニメの未来を語り合う6日間",
+                    url: "https://www.oricon.co.jp/news/2373992/full/",
+                    概要: "新潟市中央区で15日、「第3回新潟国際アニメーション映画祭」が開幕した。新潟市民プラザ、新潟日報メディアシップ、映画館のT・ジョイ、シネ・ウインドの4会場で20日まで開催される。",
+                    配信日: "2025年3月15日",
+                    hidden: false
+                },
+                {
+                    title: "タカラトミー、YouTubeショートアニメ『トランスフォーマー ワイルドキング』を3月26日から配信!新合体ギミックの玩具は4月に発売",
+                    url: "https://gamebiz.jp/news/402564",
+                    概要: "カラトミーは、変形ロボットキャラクター『トランスフォーマー』の日本オリジナル新作ショートアニメ『トランスフォーマー ワイルドキング』を、2025年3月26日からタカラトミー公式YouTubeチャンネル「タカラトミーチャンネル」で配信を開始する。",
+                    配信日: "2025年3月18日",
+                    hidden: false
+                },
+                {
+                    title: "ドワンゴ、「AnimeJapan 2025」AJステージの33プログラムをニコ生で無料中継！『鬼滅の刃』『薬屋のひとりごと』など注目タイトルが勢揃い",
+                    url: "https://gamebiz.jp/news/402594",
+                    概要: "ドワンゴは、ライブ配信サービス「ニコニコ生放送」で、3月22日・3月23日の2日間にわたり東京ビッグサイトで開催される世界最大級のアニメイベント「AnimeJapan2025」AJステージの33プログラムを無料で生中継する。",
+                    配信日: "2025年3月18日",
+                    hidden: false
+                },
+                {
+                    title: "IPビジネスを深化させる｢リアル経済圏｣の威力　アニメ産業内｢意外な巨大市場｣を牽引する企業",
+                    url: "https://toyokeizai.net/articles/-/859993",
+                    概要: "IPビジネスを深化させる｢リアル経済圏｣の威力、アニメ産業内｢意外な巨大市場｣を牽引する企業について。",
+                    配信日: "2025年3月14日",
+                    hidden: false
+                },
+                {
+                    title: "Adoの叫び声が話題 名曲「ゲゲゲの鬼太郎」熱唱で「妖怪側のそれ」「迫真すぎる」",
+                    url: "https://www.oricon.co.jp/news/2374473/full/",
+                    概要: "歌い手のAdoが、アニメ『ゲゲゲの鬼太郎』の傑作選『ゲゲゲの鬼太郎　私の愛した歴代ゲゲゲ』（フジテレビ系　4月6日午前9時～）のオープニング主題歌「ゲゲゲの鬼太郎」を担当する。",
+                    配信日: "2025年3月19日",
+                    hidden: false
+                },
+                {
+                    title: "米津玄師×羽生結弦の共演MV、ついに再生数1000万回突破 『メダリスト』OPで注目続く",
+                    url: "https://www.oricon.co.jp/news/2374303/full/",
+                    概要: "歌手・米津玄師が歌う、テレビアニメ『メダリスト』オープニング主題歌「BOW AND ARROW」のミュージックビデオの再生数が16日、1000万回を突破した。",
+                    配信日: "2025年3月16日",
+                    hidden: false
+                },
+                {
+                    title: "［週刊エンタメ］アニメ「おぼっちゃまくん」　おかげ茶魔でインドで人気爆発ぶぁい！",
+                    url: "https://www.yomiuri.co.jp/culture/20250313-OYT8T50093/",
+                    概要: "平成の初めにヒットしたアニメ「おぼっちゃまくん」が今、インドで大人気だ。子どもたちのハートをつかみ、新作の制作も現地で進行している。少し下品で、ダジャレも連発されるジャパニーズギャグアニメがなぜ？",
+                    配信日: "2025年3月14日",
+                    hidden: false
+                },
+                {
+                    title: "フジテレビ　アニメ「ワンピース」放送が深夜に移動　18年ぶりの枠変更　日曜の朝の楽しみが…衝撃の声",
+                    url: "https://www.sponichi.co.jp/entertainment/news/2025/03/12/kiji/20250312s00041000148000c.html",
+                    概要: "現在日曜の朝にフジテレビで放送中の人気アニメ「ワンピース」が、4月から日曜午後11時15分放送の枠に移動することが分かった。12日、フジテレビが改編資料を通じて発表した。",
+                    配信日: "2025年3月12日",
+                    hidden: false
+                },
+                {
+                    title: "ABCテレビが日曜深夜にアニメ枠を新設決定、第一弾作品は『日々は過ぎれど飯うまし』！　アニメ放送枠のネーミングを一般公募実施",
+                    url: "https://www.animatetimes.com/news/details.php?id=1741859016",
+                    概要: "ABC朝日放送テレビが、毎週日曜深夜（時間未定）にアニメの放送に特化したアニメ番組枠を新設することを発表しました！",
+                    配信日: "2025-03-13",
+                    hidden: false
+                },
+                {
+                    title: "アニメ・ゲーム・VR等コンテンツ領域でのIPアイデアのビジネス構築を促進するプログラム「TCIC Ideation Program 2024」のミートアップを2月10日に開催",
+                    url: "https://prtimes.jp/main/html/rd/p/000000379.000033548.html",
+                    概要: "株式会社ツクリエは、東京都から受託し運営する施設「東京コンテンツインキュベーションセンター（以下、TCIC）」のプログラム「TCIC Ideation Program 2024（TCIC IP）」の集大成として、2025年2月10日（月）に東京・虎ノ門にあるCIC Tokyoでミートアップイベント（以下、本イベント）を開催いたしました。",
+                    配信日: "2025年3月12日",
+                    hidden: false
+                },
+                {
+                    title: "Andraftが代々木アニメーション学院、スターリーキューブと共にアニメーション制作会社「株式会社Aurora Animation」を設立！",
+                    url: "https://prtimes.jp/main/html/rd/p/000000001.000158835.html",
+                    概要: "株式会社Andraft、株式会社代々木アニメーション学院、株式会社スターリーキューブの三社は、 アニメーション制作会社「株式会社Aurora Animation（オーロラ アニメーション）」 を共同で設立することをお知らせいたします。",
+                    配信日: "2025年3月10日",
+                    hidden: false
+                },
+                {
+                    title: "経産省がエンタメ戦略をとりまとめ　アニメーターの就労環境改善など",
+                    url: "https://www.nikkei.com/article/DGXZQOUA114F2011032025000000/",
+                    概要: "経済産業省は11日、アニメや音楽などエンターテインメント産業の海外展開などに関する戦略の中間とりまとめ案を有識者会議で示した。アニメーターの就労環境を改善することなどが主な内容で、政府が経済財政運営の指針とする「骨太の方針」に盛り込むことをめざす。",
+                    配信日: "2025年3月11日",
+                    hidden: false
+                },
+                {
+                    title: "DLE、ミドルクオリティのアニメを低コストかつ短納期で実現する「オルタナティブ・アニメ」事業を開始 第1弾は『野原ひろし 昼メシの流儀』",
+                    url: "https://gamebiz.jp/news/402272",
+                    概要: "DLEは、テレビ放送や配信を目的とした30分のアニメ・シリーズ(1クール、全12話)をメインの領域として、DLEのAdobe Animateによる制作ノウハウを活かし進化させたミドルクォリティのアニメーションを通常の2Dアニメ会社よりも低コスト且つ短期間で制作するというもの。",
+                    配信日: "2025年3月18日",
+                    hidden: false
+                },
+                {
+                    title: "クリエイターが創作に没頭できる環境を―Creator's XがAI活用で挑むアニメ業界オープンイノベーション",
+                    url: "https://prtimes.jp/main/html/rd/p/000000022.000109712.html",
+                    概要: "生成AIの台頭によりクリエイティブ産業が大きく変わりつつある今、アニメ制作の現場にも変革の波が訪れています。Creator’s Xは「創るに没頭しよう」をビジョンに掲げ、AIをアニメーターのアシスタントとして活用する新しいアニメ制作の形を提案。",
+                    配信日: "2025年03月10日",
+                    hidden: false
+                },
+                 {
+                    title: "アニプレックスとCrunchyroll、共同出資によるアニメプロデュース会社「HAYATE」設立",
+                    url: "https://branc.jp/article/2025/03/19/1483.html",
+                    概要: "アニプレックスおよびCrunchyroll, LLCの二社は、共同出資によりHAYATEを設立したことを発表した。",
+                    配信日: "2025.3.19",
+                    hidden: false
+                },
+                {
+                    title: "卒業制作アニメの続編がTVアニメ化決定　3D作品『銀河特急 ミルキー☆サブウェイ』7月放送",
+                    url: "https://news.yahoo.co.jp/articles/cd57f67ec4715d1dc25c26fad1e9ed019042ec0f",
+                    概要: "自主制作短編3Dアニメ『ミルキー☆ハイウェイ』の続編が、『銀河特急 ミルキー☆サブウェイ』としてTVアニメ化。7月に放送および配信されることが決定した。",
+                   配信日: "2025年3月20日",
+                    hidden: false
+                }
+            ]
+        };
+
+        const newsContainer = document.getElementById('news-container');
+        const dateDropdown = document.getElementById('date-dropdown');
+        const adminPanel = document.getElementById('admin-panel');
+        const adminButton = document.getElementById('admin-button');
+        const closeAdminPanelButton = document.getElementById('close-admin-panel');
+        const addNewsForm = document.getElementById('add-news-form');
+        const messageContainer = document.getElementById('message-container');
+        const newsList = document.getElementById('news-list');
+        const newsListContainer = document.getElementById('news-list-container');
+        const toggleNewsListButton = document.getElementById('toggle-news-list');
+
+
+        let editingIndex = null;
+        let isNewsListVisible = true;
+
+        // groupedNewsを初期化
+        let groupedNews = {};
+
+        // localStorageにデータがあれば、それを読み込んでgroupedNewsを初期化
+        if (localStorage.getItem('groupedNews')) {
+            groupedNews = JSON.parse(localStorage.getItem('groupedNews'));
+        } else {
+            // localStorageにデータがない場合は、上記のnewsDataを使用
+            for (const date in newsData) {
+                groupedNews[date] = newsData[date];
+            }
+        }
+
+        const sortedDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
+        sortedDates.forEach(date => {
+            const option = document.createElement('option');
+            option.value = date;
+            option.textContent = date;
+            dateDropdown.appendChild(option);
+        });
+
+        function displayNews(selectedDate) {
+            newsContainer.innerHTML = '';
+            if (selectedDate && groupedNews[selectedDate]) {
+                groupedNews[selectedDate].forEach(news => {
+                     if (!news.hidden) { // hidden プロパティが false の場合のみ表示
+                         const newsCard = document.createElement('div');
+                         newsCard.className = 'news-card';
+
+                         const titleElement = document.createElement('h2');
+                         titleElement.textContent = news.title;
+
+                         const summaryElement = document.createElement('p');
+                         summaryElement.textContent = news.概要;
+
+                         const linkElement = document.createElement('a');
+                         linkElement.href = news.url;
+                         linkElement.textContent = '続きを読む';
+                         linkElement.target = appendTimestamp(news.url); // キャッシュバスター
+                         linkElement.target = '_blank';
+
+                         const publishDateElement = document.createElement('p');
+                         publishDateElement.className = 'publish-date';
+                         publishDateElement.textContent = `配信日：${news.配信日}`;
+
+                         newsCard.appendChild(titleElement);
+                         newsCard.appendChild(summaryElement);
+                         newsCard.appendChild(linkElement);
+                         newsCard.appendChild(publishDateElement);
+                         newsContainer.appendChild(newsCard);
+                     }
+                });
+            } else if (selectedDate) {
+                newsContainer.innerHTML = '<p class="text-gray-500 text-center">該当する日付のニュースはありません。</p>';
+            } else {
+                newsContainer.innerHTML = '<p class="text-gray-500 text-center">日付を選択してください。</p>';
+            }
+        }
+
+        displayNews(null);
+
+        dateDropdown.addEventListener('change', (event) => {
+            const selectedDate = event.target.value;
+            displayNews(selectedDate);
+        });
+
+        adminButton.addEventListener('click', () => {
+            adminPanel.classList.add('show');
+            populateNewsList();
+        });
+
+        closeAdminPanelButton.addEventListener('click', () => {
+            adminPanel.classList.remove('show');
+            editingIndex = null;
+            addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
+        });
+
+        addNewsForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const date = document.getElementById('news-date').value;
+            const title = document.getElementById('news-title').value;
+            const url = document.getElementById('news-url').value;
+            const summary = document.getElementById('news-summary').value;
+            const publishDate = document.getElementById('news-publish-date').value;
+
+            if (editingIndex !== null) {
+                const selectedDate = dateDropdown.value;
+                if (selectedDate && groupedNews[selectedDate]) {
+                    groupedNews[selectedDate][editingIndex] = { title, url, 概要: summary, 配信日: publishDate, hidden: groupedNews[selectedDate][editingIndex].hidden }; // 既存の hidden の値を保持
+                    messageContainer.textContent = 'ニュースを編集しました。';
+                } else {
+                    messageContainer.textContent = 'エラー：ニュースの編集に失敗しました。';
+                    return;
+                }
+                editingIndex = null;
+                addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
+            } else {
+                if (groupedNews[date]) {
+                    groupedNews[date].push({ title, url, 概要: summary, 配信日: publishDate, hidden: false }); // 新規追加時は hidden: false
+                } else {
+                    groupedNews[date] = [{ title, url, 概要: summary, 配信日: publishDate, hidden: false }]; // 新規追加時は hidden: false
+                }
+                messageContainer.textContent = 'ニュースを追加しました。';
+            }
+
+            // localStorageにデータを保存
+            try {
+                localStorage.setItem('groupedNews', JSON.stringify(groupedNews));
+            } catch (error) {
+                console.error('localStorageへの保存に失敗しました:', error);
+                messageContainer.textContent = 'エラー：ニュースの保存に失敗しました。ブラウザの設定をご確認ください。';
+                return; // 保存に失敗した場合は処理を中断
+            }
+
+            addNewsForm.reset();
+            populateNewsList();
+            updateDateDropdown();
+            displayNews(dateDropdown.value);
+        });
+
+        function populateNewsList() {
+            newsList.innerHTML = '';
+            const allNews = [];
+            for (const date in groupedNews) {
+                groupedNews[date].forEach(news => {
+                    allNews.push({ date, ...news });
+                });
+            }
+
+            allNews.forEach((news, index) => {
+                const listItem = document.createElement('li');
+                listItem.className = 'border-b py-2 flex justify-between items-center';
+                listItem.innerHTML = `
+                    <div>
+                        <p class="font-semibold ${news.hidden ? 'text-gray-400 line-through' : ''}">${news.title} (${news.date})</p>
+                        <p class="text-gray-500 text-sm">${news.配信日}</p>
+                    </div>
+                    <div>
+                        <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline text-xs mr-1 edit-button" data-index="${index}">編集</button>
+                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline text-xs delete-button" data-index="${index}">削除</button>
+                    </div>
+                `;
+                newsList.appendChild(listItem);
+            });
+
+            addEventListenerToButtons();
+        }
+
+        function updateDateDropdown() {
+            dateDropdown.innerHTML = '<option value="">日付を選択してください</option>';
+            const sortedDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
+            sortedDates.forEach(date => {
+                const option = document.createElement('option');
+                option.value = date;
+                option.textContent = date;
+                dateDropdown.appendChild(option);
+            });
+        }
+
+        function addEventListenerToButtons() {
+            const editButtons = document.querySelectorAll('.edit-button');
+            const deleteButtons = document.querySelectorAll('.delete-button');
+
+            editButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const index = parseInt(event.target.dataset.index);
+                    editingIndex = index;
+                    const newsToEdit = getNewsByIndex(index);
+                    if (newsToEdit) {
+                        document.getElementById('news-date').value = newsToEdit.date;
+                        document.getElementById('news-title').value = newsToEdit.title;
+                        document.getElementById('news-url').value = newsToEdit.url;
+                        document.getElementById('news-summary').value = newsToEdit.概要;
+                        document.getElementById('news-publish-date').value = newsToEdit.配信日;
+
+                        addNewsForm.querySelector('button[type="submit"]').textContent = '更新';
+                        adminPanel.classList.add('show');
+                    } else {
+                        messageContainer.textContent = "編集するニュースが見つかりませんでした。";
+                    }
+                });
+            });
+
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const index = parseInt(event.target.dataset.index);
+                    const dateOfNews = getDateByIndex(index);
+                    if (dateOfNews) {
+                        groupedNews[dateOfNews].splice(index, 1);
+                        if (groupedNews[dateOfNews].length === 0) {
+                            delete groupedNews[dateOfNews];
+                        }
+                        // localStorageのデータを更新
+                        try {
+                            localStorage.setItem('groupedNews', JSON.stringify(groupedNews));
+                        } catch (error) {
+                            console.error('localStorageへの保存に失敗しました:', error);
+                            messageContainer.textContent = 'エラー：ニュースの削除に失敗しました。ブラウザの設定をご確認ください。';
+                            return; // 保存に失敗した場合は処理を中断
+                        }
+
+                        populateNewsList();
+                        updateDateDropdown();
+                        displayNews(dateDropdown.value);
+                        messageContainer.textContent = 'ニュースを削除しました。';
+                    } else {
+                        messageContainer.textContent = 'ニュースを削除できませんでした。';
+                    }
+                });
+            });
+        }
+
+        function getNewsByIndex(index) {
+            let newsCounter = 0;
+            for (const date in groupedNews) {
+                for (let i = 0; i < groupedNews[date].length; i++) {
+                    if (newsCounter === index) {
+                        return {
+                            date,
+                            title: groupedNews[date][i].title,
+                            url: groupedNews[date][i].url,
+                            概要: groupedNews[date][i].概要,
+                            配信日: groupedNews[date][i].配信日,
+                             hidden: groupedNews[date][i].hidden
+                        };
+                    }
+                    newsCounter++;
+                }
+            }
+            return null;
+        }
+
+        function getDateByIndex(index) {
+            let newsCounter = 0;
+            for (const date in groupedNews) {
+                for (let i = 0; i < groupedNews[date].length; i++) {
+                    if (newsCounter === index) {
+                        return date;
+                    }
+                    newsCounter++;
+                }
+            }
+            return null;
+        }
+
+        toggleNewsListButton.addEventListener('click', () => {
+            isNewsListVisible = !isNewsListVisible;
+            newsListContainer.classList.toggle('show', isNewsListVisible);
+            toggleNewsListButton.textContent = isNewsListVisible ? '非表示' : '表示';
+        });
+
+        function appendTimestamp(url) {
+            const timestamp = new Date().getTime();
+            if (url.indexOf('?') > -1) {
+                return url + '&t=' + timestamp;
+            } else {
+                return url + '?t=' + timestamp;
+            }
+        }
+
+        window.onload = () => {
+            populateNewsList();
+            updateDateDropdown();
+            if (dateDropdown.value) {
+                displayNews(dateDropdown.value);
+            }
+        };
+    </script>
+</body>
+</html>
