@@ -151,7 +151,7 @@
     <script>
         // localStorageからニュースデータを読み込む
         let newsData = JSON.parse(localStorage.getItem('newsData')) || {
-            "2025年3月21日": [
+            "2025-03-21": [ // <-- Date format was corrected here previously
                 {
                     title: "転スラ×ロボットの学習漫画 掲載内容発表!AI(人工知能)ってなに?危なくないの?",
                     url: "https://www.oricon.co.jp/news/2374110/full/",
@@ -299,6 +299,93 @@
                    配信日: "2025年3月20日",
                     hidden: false
                 }
+            ],
+            // --- NEW DATE CATEGORY AND NEWS ITEMS ADDED HERE ---
+            "2025-04-04": [
+                {
+                    title: "関係会社株式の譲渡及び関係会社株式売却益計上見込みに関するお知らせ",
+                    url: "https://mediado.jp/corporate/8360/",
+                    概要: "株式会社メディアドゥは、持分法適用会社である株式会社MyAnimeListの全保有株式を株式会社Gaudiyに譲渡することを決議。これによりMyAnimeListは関連会社から外れる。",
+                    配信日: "2025年3月27日",
+                    hidden: false
+                },
+                {
+                    title: "サイバーエージェントとSNSの”X“ アニメのグローバルプロモーションで協力",
+                    url: "http://animationbusiness.info/archives/16599",
+                    概要: "CyberAgent AmericaとX Corp. Japanが、アニメのグローバル展開におけるマーケティングパートナーシップを締結。サイバーエージェントは米国法人を通じてグローバルマーケティング事業を強化。",
+                    配信日: "2025年4月3日",
+                    hidden: false
+                },
+                {
+                    title: "麻布台ヒルズで高畑勲展　「火垂るの墓」に注目も",
+                    url: "http://animationbusiness.info/archives/16596",
+                    概要: "2025年6月27日から9月15日まで麻布台ヒルズ ギャラリーにて「高畑勲展 ̶日本のアニメーションを作った男。」が開催される。特に『火垂るの墓』に注目が集まる。",
+                    配信日: "2025年3月31日",
+                    hidden: false
+                },
+                {
+                    title: "解説：アニメ、地上波回帰のワケ　ジャンルとしてのメリットと弱点",
+                    url: "https://mantan-web.jp/article/20250330dog00m200004000c.html",
+                    概要: "新年度の地上波テレビではアニメジャンルが伸長。動画配信が普及する中、再び地上波でアニメを編成する意義と、そのメリット・弱点を探る。",
+                    配信日: "2025年3月30日",
+                    hidden: false
+                },
+                {
+                    title: "アニメ制作など４５業者に公取委が是正指導、フリーランス取引適正化法違反で…初公表",
+                    url: "https://www.yomiuri.co.jp/national/20250328-OYT1T50133/",
+                    概要: "公正取引委員会は、アニメ制作など4業種の計45業者に対し、フリーランス取引適正化法違反（取引条件の不明示など）で是正指導を行ったと発表。同法施行後初の指導公表。",
+                    配信日: "2025年3月28日",
+                    hidden: false
+                },
+                {
+                    title: "(令和7年3月28日)特定受託事業者に係る取引の適正化等に関する法律に基づく指導について",
+                    url: "https://www.jftc.go.jp/houdou/pressrelease/2025/mar/250328_FL.html",
+                    概要: "公正取引委員会は、フリーランス・事業者間取引適正化等法に基づき、ゲームソフトウェア業、アニメーション制作業など4業種の45事業者に対し、契約書記載や支払期日等の是正指導を行った。",
+                    配信日: "2025年3月28日", // Changed from 令和7年3月28日
+                    hidden: false
+                },
+                {
+                    title: "人気アニメランキングを“10代限定”で集計すると…ラノベ原作がマンガを差し置き堂々首位",
+                    url: "https://0115765.com/archives/120767",
+                    概要: "ABEMAが発表した「10代男女に人気なアベマアニメTOP5」で、『Re:ゼロから始める異世界生活』が1位を獲得。ライトノベル原作作品が強い支持を集めた。",
+                    配信日: "2025年3月27日",
+                    hidden: false
+                },
+                {
+                    title: "個人や少人数制作が加速するアニメーション業界！新時代のアニメーションクリエイター100組が集結した書籍『ANIMATION CREATORS 100』が刊行！",
+                    url: "https://prtimes.jp/main/html/rd/p/000000001.000158487.html",
+                    概要: "株式会社芸術新聞社は、新進気鋭からインディ作家まで、今注目すべきアニメーションクリエイター100組を紹介する書籍『ANIMATION CREATORS 100』を発売。",
+                    配信日: "2025年3月24日",
+                    hidden: false
+                },
+                {
+                    title: "アニメーション制作会社の株式会社サエッタが鹿児島市に進出！",
+                    url: "https://prtimes.jp/main/html/rd/p/000000039.000100148.html",
+                    概要: "東京のアニメーション制作会社、株式会社サエッタが鹿児島市と立地協定を締結。鹿児島市はコンテンツ制作業企業の誘致を進めている。",
+                    配信日: "2025年3月28日",
+                    hidden: false
+                },
+                {
+                    title: "Apple TV+の損失は年間で10億ドル、加入者は4,500万人",
+                    url: "https://branc.jp/article/2025/04/04/1496.html",
+                    概要: "Apple TV+は加入者4,500万人を抱えるものの、年間10億ドルの損失を出していると報じられた。コンテンツには年間約45億ドルを費やしている。",
+                    配信日: "2025年4月4日",
+                    hidden: false
+                },
+                {
+                    title: "北米IMAXシアターで公開の4K版『もののけ姫』、わずか330スクリーンで興収400万ドルと好調",
+                    url: "https://www.cinemacafe.net/article/2025/03/31/98901.html",
+                    概要: "北米のIMAXシアターで公開された4Kリストア版『もののけ姫』が、わずか330スクリーンで興行収入400万ドルを超える好調なスタートを切った。",
+                    配信日: "2025年3月31日",
+                    hidden: false
+                },
+                {
+                    title: "「風の谷のナウシカ」、台湾で興行収入約1億6000万円に 特典ポスターが話題",
+                    url: "https://japan.focustaiwan.tw/entertainment-sport/202503260006",
+                    概要: "台湾で初公開された「風の谷のナウシカ」が興行収入約1億6000万円を記録。台湾限定の来場者特典ポスターなどが話題を呼んでいる。",
+                    配信日: "2025年3月26日",
+                    hidden: false
+                }
             ]
         };
 
@@ -386,12 +473,17 @@
         adminButton.addEventListener('click', () => {
             adminPanel.classList.add('show');
             populateNewsList();
+            newsListContainer.classList.add('show'); // Ensure list is shown initially
+            toggleNewsListButton.textContent = '非表示'; // Set button text
+            isNewsListVisible = true;
         });
 
         closeAdminPanelButton.addEventListener('click', () => {
             adminPanel.classList.remove('show');
             editingIndex = null;
+            addNewsForm.reset(); // Clear the form
             addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
+            messageContainer.textContent = ''; // Clear any messages
         });
 
         addNewsForm.addEventListener('submit', (event) => {
@@ -401,167 +493,262 @@
             const title = document.getElementById('news-title').value;
             const url = document.getElementById('news-url').value;
             const summary = document.getElementById('news-summary').value;
-            const publishDate = document.getElementById('news-publish-date').value;
+            // Format the publish date to YYYY年M月D日 or similar consistent format if needed
+            // For now, keeping the input format. Consider using a date library for robust parsing/formatting.
+            const publishDateInput = document.getElementById('news-publish-date').value;
+            // Example basic formatting (adjust as needed):
+            // const dateObj = new Date(publishDateInput);
+            // const publishDate = !isNaN(dateObj) ? `${dateObj.getFullYear()}年${dateObj.getMonth() + 1}月${dateObj.getDate()}日` : publishDateInput;
+            const publishDate = publishDateInput; // Keep input value for now
 
+            // Find the correct news item to edit across all dates
+            let originalDate = null;
+            let actualIndexInDate = -1;
             if (editingIndex !== null) {
-                const selectedDate = dateDropdown.value;
-                if (selectedDate && groupedNews[selectedDate]) {
-                    groupedNews[selectedDate][editingIndex] = { title, url, 概要: summary, 配信日: publishDate, hidden: groupedNews[selectedDate][editingIndex].hidden }; // 既存の hidden の値を保持
-                    messageContainer.textContent = 'ニュースを編集しました。';
-                } else {
-                    messageContainer.textContent = 'エラー：ニュースの編集に失敗しました。';
-                    return;
+                let currentGlobalIndex = 0;
+                for (const d in groupedNews) {
+                    for (let i = 0; i < groupedNews[d].length; i++) {
+                        if (currentGlobalIndex === editingIndex) {
+                            originalDate = d;
+                            actualIndexInDate = i;
+                            break;
+                        }
+                        currentGlobalIndex++;
+                    }
+                    if (originalDate) break;
                 }
-                editingIndex = null;
-                addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
-            } else {
-                if (groupedNews[date]) {
-                    groupedNews[date].push({ title, url, 概要: summary, 配信日: publishDate, hidden: false }); // 新規追加時は hidden: false
+            }
+
+
+            if (editingIndex !== null && originalDate !== null && actualIndexInDate !== -1) {
+                // Editing existing news
+                const newsItem = { title, url, 概要: summary, 配信日: publishDate, hidden: groupedNews[originalDate][actualIndexInDate].hidden };
+
+                if (originalDate === date) {
+                    // Date hasn't changed, just update in place
+                    groupedNews[originalDate][actualIndexInDate] = newsItem;
                 } else {
-                    groupedNews[date] = [{ title, url, 概要: summary, 配信日: publishDate, hidden: false }]; // 新規追加時は hidden: false
+                    // Date has changed, remove from old date and add to new date
+                    groupedNews[originalDate].splice(actualIndexInDate, 1);
+                    if (groupedNews[originalDate].length === 0) {
+                        delete groupedNews[originalDate];
+                    }
+                    if (!groupedNews[date]) {
+                        groupedNews[date] = [];
+                    }
+                    groupedNews[date].push(newsItem);
+                }
+                 messageContainer.textContent = 'ニュースを編集しました。';
+                 addNewsForm.querySelector('button[type="submit"]').textContent = '追加'; // Reset button text
+                 editingIndex = null; // Reset editing index
+
+            } else {
+                // Adding new news
+                const newNews = { title, url, 概要: summary, 配信日: publishDate, hidden: false };
+                if (groupedNews[date]) {
+                    groupedNews[date].push(newNews);
+                } else {
+                    groupedNews[date] = [newNews];
                 }
                 messageContainer.textContent = 'ニュースを追加しました。';
             }
 
-            // localStorageにデータを保存
+            // Save, reset form, update lists and display
             try {
                 localStorage.setItem('groupedNews', JSON.stringify(groupedNews));
             } catch (error) {
                 console.error('localStorageへの保存に失敗しました:', error);
                 messageContainer.textContent = 'エラー：ニュースの保存に失敗しました。ブラウザの設定をご確認ください。';
-                return; // 保存に失敗した場合は処理を中断
+                return; // Stop if saving failed
             }
 
             addNewsForm.reset();
             populateNewsList();
-            updateDateDropdown();
-            displayNews(dateDropdown.value);
+            updateDateDropdown(); // Update dropdown options in case dates were added/removed
+             // Refresh display with the currently selected date, or the added/edited date
+            const currentSelectedDate = dateDropdown.value;
+            displayNews(currentSelectedDate && groupedNews[currentSelectedDate] ? currentSelectedDate : date);
+             // Optionally set the dropdown to the new/edited date
+             if (groupedNews[date] && (!currentSelectedDate || currentSelectedDate !== date)) {
+                 dateDropdown.value = date;
+             }
+
         });
 
         function populateNewsList() {
             newsList.innerHTML = '';
-            const allNews = [];
-            for (const date in groupedNews) {
-                groupedNews[date].forEach(news => {
-                    allNews.push({ date, ...news });
-                });
-            }
+            let globalIndex = 0; // Keep track of the global index across all dates
+            // Sort dates before iterating to ensure consistent order in the admin list
+            const sortedAdminDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
 
-            allNews.forEach((news, index) => {
-                const listItem = document.createElement('li');
-                listItem.className = 'border-b py-2 flex justify-between items-center';
-                listItem.innerHTML = `
-                    <div>
-                        <p class="font-semibold ${news.hidden ? 'text-gray-400 line-through' : ''}">${news.title} (${news.date})</p>
-                        <p class="text-gray-500 text-sm">${news.配信日}</p>
-                    </div>
-                    <div>
-                        <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline text-xs mr-1 edit-button" data-index="${index}">編集</button>
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline text-xs delete-button" data-index="${index}">削除</button>
-                    </div>
-                `;
-                newsList.appendChild(listItem);
+            sortedAdminDates.forEach(date => {
+                 groupedNews[date].forEach(news => {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'border-b py-2 flex justify-between items-center';
+                    // Display date clearly with the title
+                    listItem.innerHTML = `
+                        <div>
+                            <p class="font-semibold ${news.hidden ? 'text-gray-400 line-through' : ''}">${news.title} (${date})</p>
+                            <p class="text-gray-500 text-sm">配信日：${news.配信日}</p>
+                        </div>
+                        <div>
+                            <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline text-xs mr-1 edit-button" data-index="${globalIndex}">編集</button>
+                            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline text-xs delete-button" data-index="${globalIndex}">削除</button>
+                        </div>
+                    `;
+                    newsList.appendChild(listItem);
+                    globalIndex++; // Increment global index for the next item
+                 });
             });
 
-            addEventListenerToButtons();
+
+            addEventListenerToButtons(); // Re-attach listeners after repopulating
         }
 
+
         function updateDateDropdown() {
+            const currentSelectedValue = dateDropdown.value; // Preserve selection if possible
             dateDropdown.innerHTML = '<option value="">日付を選択してください</option>';
-            const sortedDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
-            sortedDates.forEach(date => {
+            const sortedDisplayDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
+            sortedDisplayDates.forEach(date => {
                 const option = document.createElement('option');
                 option.value = date;
                 option.textContent = date;
                 dateDropdown.appendChild(option);
             });
+             // Restore selection if the date still exists
+             if (groupedNews[currentSelectedValue]) {
+                 dateDropdown.value = currentSelectedValue;
+             }
         }
+
 
         function addEventListenerToButtons() {
             const editButtons = document.querySelectorAll('.edit-button');
             const deleteButtons = document.querySelectorAll('.delete-button');
 
             editButtons.forEach(button => {
-                button.addEventListener('click', (event) => {
-                    const index = parseInt(event.target.dataset.index);
-                    editingIndex = index;
-                    const newsToEdit = getNewsByIndex(index);
-                    if (newsToEdit) {
-                        document.getElementById('news-date').value = newsToEdit.date;
-                        document.getElementById('news-title').value = newsToEdit.title;
-                        document.getElementById('news-url').value = newsToEdit.url;
-                        document.getElementById('news-summary').value = newsToEdit.概要;
-                        document.getElementById('news-publish-date').value = newsToEdit.配信日;
-
-                        addNewsForm.querySelector('button[type="submit"]').textContent = '更新';
-                        adminPanel.classList.add('show');
-                    } else {
-                        messageContainer.textContent = "編集するニュースが見つかりませんでした。";
-                    }
-                });
+                button.removeEventListener('click', handleEditClick); // Remove old listener first
+                button.addEventListener('click', handleEditClick);   // Add new listener
             });
 
             deleteButtons.forEach(button => {
-                button.addEventListener('click', (event) => {
-                    const index = parseInt(event.target.dataset.index);
-                    const dateOfNews = getDateByIndex(index);
-                    if (dateOfNews) {
-                        groupedNews[dateOfNews].splice(index, 1);
-                        if (groupedNews[dateOfNews].length === 0) {
-                            delete groupedNews[dateOfNews];
-                        }
-                        // localStorageのデータを更新
-                        try {
-                            localStorage.setItem('groupedNews', JSON.stringify(groupedNews));
-                        } catch (error) {
-                            console.error('localStorageへの保存に失敗しました:', error);
-                            messageContainer.textContent = 'エラー：ニュースの削除に失敗しました。ブラウザの設定をご確認ください。';
-                            return; // 保存に失敗した場合は処理を中断
-                        }
-
-                        populateNewsList();
-                        updateDateDropdown();
-                        displayNews(dateDropdown.value);
-                        messageContainer.textContent = 'ニュースを削除しました。';
-                    } else {
-                        messageContainer.textContent = 'ニュースを削除できませんでした。';
-                    }
-                });
+                 button.removeEventListener('click', handleDeleteClick); // Remove old listener
+                 button.addEventListener('click', handleDeleteClick);   // Add new listener
             });
         }
 
-        function getNewsByIndex(index) {
-            let newsCounter = 0;
-            for (const date in groupedNews) {
-                for (let i = 0; i < groupedNews[date].length; i++) {
-                    if (newsCounter === index) {
-                        return {
-                            date,
-                            title: groupedNews[date][i].title,
-                            url: groupedNews[date][i].url,
-                            概要: groupedNews[date][i].概要,
-                            配信日: groupedNews[date][i].配信日,
-                             hidden: groupedNews[date][i].hidden
-                        };
-                    }
-                    newsCounter++;
-                }
+        // Define handlers outside to easily remove/add listeners
+        function handleEditClick(event) {
+            const index = parseInt(event.target.dataset.index);
+            editingIndex = index; // Use the global index for editing state
+            const newsToEdit = getNewsByGlobalIndex(index); // Use the function that understands global index
+            if (newsToEdit) {
+                document.getElementById('news-date').value = newsToEdit.date; // The date the news belongs to
+                document.getElementById('news-title').value = newsToEdit.title;
+                document.getElementById('news-url').value = newsToEdit.url;
+                document.getElementById('news-summary').value = newsToEdit.概要;
+                // Ensure publish date is in YYYY-MM-DD for the input field
+                document.getElementById('news-publish-date').value = formatInputDate(newsToEdit.配信日);
+
+                addNewsForm.querySelector('button[type="submit"]').textContent = '更新';
+                // No need to show admin panel again, it's already open
+                // Scroll form into view if needed
+                 addNewsForm.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                messageContainer.textContent = "編集するニュースが見つかりませんでした。";
+                editingIndex = null; // Reset if not found
             }
-            return null;
         }
 
-        function getDateByIndex(index) {
-            let newsCounter = 0;
-            for (const date in groupedNews) {
-                for (let i = 0; i < groupedNews[date].length; i++) {
-                    if (newsCounter === index) {
-                        return date;
-                    }
-                    newsCounter++;
+        function handleDeleteClick(event) {
+             const indexToDelete = parseInt(event.target.dataset.index);
+             const newsInfo = getNewsByGlobalIndex(indexToDelete); // Get date and index within date
+
+             if (newsInfo && newsInfo.date && newsInfo.indexInDate !== -1) {
+                // Confirm deletion
+                if (!confirm(`「${newsInfo.title}」を削除してもよろしいですか？`)) {
+                    return; // Stop if user cancels
                 }
-            }
-            return null;
+
+                 groupedNews[newsInfo.date].splice(newsInfo.indexInDate, 1);
+                 if (groupedNews[newsInfo.date].length === 0) {
+                     delete groupedNews[newsInfo.date];
+                 }
+
+                 try {
+                     localStorage.setItem('groupedNews', JSON.stringify(groupedNews));
+                 } catch (error) {
+                     console.error('localStorageへの保存に失敗しました:', error);
+                     messageContainer.textContent = 'エラー：ニュースの削除に失敗しました。ブラウザの設定をご確認ください。';
+                     return;
+                 }
+
+                 populateNewsList(); // Update admin list
+                 updateDateDropdown(); // Update dropdown
+                 displayNews(dateDropdown.value); // Refresh main display
+                 messageContainer.textContent = 'ニュースを削除しました。';
+                 // Clear form if the deleted item was being edited
+                 if (editingIndex === indexToDelete) {
+                    editingIndex = null;
+                    addNewsForm.reset();
+                    addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
+                 }
+
+             } else {
+                 messageContainer.textContent = '削除するニュースが見つかりませんでした。';
+             }
         }
+
+
+        // Helper to get news details using the global index from the admin list
+        function getNewsByGlobalIndex(globalIndex) {
+            let currentGlobalIndex = 0;
+            const sortedAdminDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
+            for (const date of sortedAdminDates) {
+                 for (let i = 0; i < groupedNews[date].length; i++) {
+                     if (currentGlobalIndex === globalIndex) {
+                         return {
+                             date: date,
+                             indexInDate: i, // Index within the specific date array
+                             ...groupedNews[date][i] // Spread the rest of the news properties
+                         };
+                     }
+                     currentGlobalIndex++;
+                 }
+            }
+            return null; // Not found
+        }
+
+         // Helper function to format various date strings to YYYY-MM-DD for input[type=date]
+         function formatInputDate(dateString) {
+            if (!dateString) return '';
+            try {
+                // Attempt to handle formats like "YYYY年M月D日", "YYYY.M.D", "YYYY-MM-DD"
+                const cleanedString = dateString.replace(/年|月/g, '-').replace(/日/g, '').replace(/\./g, '-');
+                const dateObj = new Date(cleanedString);
+                 if (isNaN(dateObj.getTime())) { // Check if date is valid
+                    // Try parsing as YYYYMMDD if previous failed
+                    if (/^\d{8}$/.test(dateString)) {
+                       const year = dateString.substring(0, 4);
+                       const month = dateString.substring(4, 6);
+                       const day = dateString.substring(6, 8);
+                       const directDate = new Date(`${year}-${month}-${day}`);
+                       if (!isNaN(directDate.getTime())) return `${year}-${month}-${day}`;
+                    }
+                    console.warn("Could not parse date for input:", dateString);
+                    return ''; // Return empty if parsing fails
+                 }
+                const year = dateObj.getFullYear();
+                const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+                const day = String(dateObj.getDate()).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            } catch (e) {
+                console.error("Error formatting date for input:", dateString, e);
+                return ''; // Return empty on error
+            }
+         }
+
 
         toggleNewsListButton.addEventListener('click', () => {
             isNewsListVisible = !isNewsListVisible;
@@ -571,19 +758,40 @@
 
         function appendTimestamp(url) {
             const timestamp = new Date().getTime();
-            if (url.indexOf('?') > -1) {
-                return url + '&t=' + timestamp;
-            } else {
-                return url + '?t=' + timestamp;
+            try {
+                const urlObj = new URL(url);
+                urlObj.searchParams.set('t', timestamp);
+                return urlObj.toString();
+            } catch (e) {
+                // Fallback for invalid URLs or environments without URL support
+                 if (url.indexOf('?') > -1) {
+                     return url + '&t=' + timestamp;
+                 } else {
+                     return url + '?t=' + timestamp;
+                 }
             }
         }
 
         window.onload = () => {
-            populateNewsList();
-            updateDateDropdown();
-            if (dateDropdown.value) {
-                displayNews(dateDropdown.value);
-            }
+            // Make sure groupedNews is populated before calling other functions
+             if (!localStorage.getItem('groupedNews')) {
+                localStorage.setItem('groupedNews', JSON.stringify(newsData));
+                groupedNews = newsData; // Use default data if nothing in localStorage
+             } else {
+                 groupedNews = JSON.parse(localStorage.getItem('groupedNews'));
+             }
+
+            updateDateDropdown(); // Populate dropdown first
+            // Select the latest date by default if available
+             if (sortedDates.length > 0) {
+                 const latestDate = sortedDates[0]; // Assumes sortedDates is populated correctly
+                 dateDropdown.value = latestDate;
+                 displayNews(latestDate);
+             } else {
+                displayNews(null); // Display initial message if no dates
+             }
+            // Don't populate admin list on load, only when admin button is clicked
+             // populateNewsList();
         };
     </script>
 </body>
