@@ -151,7 +151,7 @@
     <script>
         // localStorageからニュースデータを読み込む
         let newsData = JSON.parse(localStorage.getItem('newsData')) || {
-            "2025-03-21": [ // <-- Date format was corrected here previously
+            "2025-03-21": [
                 {
                     title: "転スラ×ロボットの学習漫画 掲載内容発表!AI(人工知能)ってなに?危なくないの?",
                     url: "https://www.oricon.co.jp/news/2374110/full/",
@@ -247,7 +247,7 @@
                     title: "ABCテレビが日曜深夜にアニメ枠を新設決定、第一弾作品は『日々は過ぎれど飯うまし』！　アニメ放送枠のネーミングを一般公募実施",
                     url: "https://www.animatetimes.com/news/details.php?id=1741859016",
                     概要: "ABC朝日放送テレビが、毎週日曜深夜（時間未定）にアニメの放送に特化したアニメ番組枠を新設することを発表しました！",
-                    配信日: "2025-03-13",
+                    配信日: "2025年3月13日", // Corrected format
                     hidden: false
                 },
                 {
@@ -282,25 +282,24 @@
                     title: "クリエイターが創作に没頭できる環境を―Creator's XがAI活用で挑むアニメ業界オープンイノベーション",
                     url: "https://prtimes.jp/main/html/rd/p/000000022.000109712.html",
                     概要: "生成AIの台頭によりクリエイティブ産業が大きく変わりつつある今、アニメ制作の現場にも変革の波が訪れています。Creator’s Xは「創るに没頭しよう」をビジョンに掲げ、AIをアニメーターのアシスタントとして活用する新しいアニメ制作の形を提案。",
-                    配信日: "2025年03月10日",
+                    配信日: "2025年3月10日", // Corrected format
                     hidden: false
                 },
-                 {
-                    title: "アニプレックスとCrunchyroll、共同出資によるアニメプロデュース会社「HAYATE」設立",
-                    url: "https://branc.jp/article/2025/03/19/1483.html",
-                    概要: "アニプレックスおよびCrunchyroll, LLCの二社は、共同出資によりHAYATEを設立したことを発表した。",
-                    配信日: "2025.3.19",
-                    hidden: false
-                },
-                {
-                    title: "卒業制作アニメの続編がTVアニメ化決定　3D作品『銀河特急 ミルキー☆サブウェイ』7月放送",
-                    url: "https://news.yahoo.co.jp/articles/cd57f67ec4715d1dc25c26fad1e9ed019042ec0f",
-                    概要: "自主制作短編3Dアニメ『ミルキー☆ハイウェイ』の続編が、『銀河特急 ミルキー☆サブウェイ』としてTVアニメ化。7月に放送および配信されることが決定した。",
-                   配信日: "2025年3月20日",
-                    hidden: false
-                }
+                {
+                    title: "アニプレックスとCrunchyroll、共同出資によるアニメプロデュース会社「HAYATE」設立",
+                    url: "https://branc.jp/article/2025/03/19/1483.html",
+                    概要: "アニプレックスおよびCrunchyroll, LLCの二社は、共同出資によりHAYATEを設立したことを発表した。",
+                    配信日: "2025年3月19日", // Corrected format
+                    hidden: false
+                },
+                {
+                    title: "卒業制作アニメの続編がTVアニメ化決定　3D作品『銀河特急 ミルキー☆サブウェイ』7月放送",
+                    url: "https://news.yahoo.co.jp/articles/cd57f67ec4715d1dc25c26fad1e9ed019042ec0f",
+                    概要: "自主制作短編3Dアニメ『ミルキー☆ハイウェイ』の続編が、『銀河特急 ミルキー☆サブウェイ』としてTVアニメ化。7月に放送および配信されることが決定した。",
+                    配信日: "2025年3月20日",
+                    hidden: false
+                }
             ],
-            // --- NEW DATE CATEGORY AND NEWS ITEMS ADDED HERE ---
             "2025-04-04": [
                 {
                     title: "関係会社株式の譲渡及び関係会社株式売却益計上見込みに関するお知らせ",
@@ -341,7 +340,7 @@
                     title: "(令和7年3月28日)特定受託事業者に係る取引の適正化等に関する法律に基づく指導について",
                     url: "https://www.jftc.go.jp/houdou/pressrelease/2025/mar/250328_FL.html",
                     概要: "公正取引委員会は、フリーランス・事業者間取引適正化等法に基づき、ゲームソフトウェア業、アニメーション制作業など4業種の45事業者に対し、契約書記載や支払期日等の是正指導を行った。",
-                    配信日: "2025年3月28日", // Changed from 令和7年3月28日
+                    配信日: "2025年3月28日",
                     hidden: false
                 },
                 {
@@ -386,8 +385,151 @@
                     配信日: "2025年3月26日",
                     hidden: false
                 }
+            ],
+            // --- NEW DATE CATEGORY AND NEWS ITEMS ADDED HERE ---
+            "2025-04-11": [
+                {
+                    title: "MAPPA、音楽レーベル「mappa records」設立 ライブ運営などにも挑戦「“心に残るアニメ”をお届けするために」",
+                    url: "https://www.oricon.co.jp/news/2377159/",
+                    概要: "『呪術廻戦』『チェンソーマン』『「進撃の巨人」The Final Season』などで知られるアニメ制作会社のMAPPAは、4月1日より新たに音楽レーベル「mappa records」を設立したことを発表した。",
+                    配信日: "2025年4月1日",
+                    hidden: false
+                },
+                {
+                    title: "文化放送『超!A&G+』終了で17年半に幕 生放送4時間に声優20人参加で思い出話「ラジオから始まった声優人生でした」【コメント抜粋】",
+                    url: "https://www.oricon.co.jp/news/2377049/",
+                    概要: "文化放送は、3月31日をもって同社が運営するアニメ&ゲーム&声優コンテンツのインターネットラジオ『超!A&G+』のサービスを終了させた。",
+                    配信日: "2025年3月31日",
+                    hidden: false
+                },
+                {
+                    title: "京アニ初の実写合成+アニメ映画公開へ? 『小林さちこのメイドラゴン』4年ぶり復活",
+                    url: "https://www.oricon.co.jp/news/2376983/full/",
+                    概要: "歌手・小林幸子とアニメ映画『小林さんちのメイドラゴン』のエイプリルフール企画が発表された。京都アニメーション初の実写合成＋アニメの映画『小林さちこのメイドラゴン さみしがりやの竜』を6月27日に公開する。",
+                    配信日: "2025年4月1日",
+                    hidden: false
+                },
+                {
+                    title: "『ぼのぼの』3年間にわたるアニバーサリー企画スタート! 開幕は周年記念ビール発売から",
+                    url: "https://www.oricon.co.jp/news/2377374/",
+                    概要: "2026年に漫画『ぼのぼの』が連載40周年、テレビアニメ『ぼのぼの』が放送10周年を迎えることを記念して、きょう2日よりアニバーサリープロジェクトが開始される。2028年3月までの3年間をアニバーサリーイヤーとして、コラボやイベントなどさまざまな企画を準備している。",
+                    配信日: "2025年4月2日",
+                    hidden: false
+                },
+                {
+                    title: "コードギアス×ポプテピピック正式コラボ 実写映像『ポプテギアス』公開でポプ子役を櫻井孝宏、ピピ美役を福山潤",
+                    url: "https://www.oricon.co.jp/news/2377400/full/",
+                    概要: "大人気アニメ『ポプテピピック』と『コードギアス 反逆のルルーシュ』がコラボレーションすることが決定した。4月1日のエイプリルフール企画でコラボビジュアルが解禁されていたが、正式にコラボ企画が続々と発表された。",
+                    配信日: "2025年4月2日",
+                    hidden: false
+                },
+                {
+                    title: "『ガンダムW』30周年企画が始動でファン歓喜「新作やってほしい」「この手紙は…」",
+                    url: "https://www.oricon.co.jp/news/2377337/full/",
+                    概要: "大人気アニメ『新機動戦記ガンダムW』30周年記念プロジェクトが始動した。あわせてドレスアップしたヒイロとリリーナを描いた30周年記念ビジュアルが公開され、ネット上では歓喜の声があがっている。",
+                    配信日: "2025年4月2日",
+                    hidden: false
+                },
+                {
+                    title: "B'z『ルパン三世』新作映画で主題歌担当 6月公開で予告映像が解禁!稲葉浩志「緊張感を意識」",
+                    url: "https://www.oricon.co.jp/news/2377734/",
+                    概要: "大人気アニメ『ルパン三世』の完全新作映画『LUPIN THE IIIRD THE MOVIE 不死身の血族』が、6月27日に公開されることが決定した。",
+                    配信日: "2025年4月4日",
+                    hidden: false
+                },
+                {
+                    title: "ジャンプ漫画家『メダリスト』ネタのコラボ絵描く 「見なよ…私の」に大反響「出版社の壁を越えたw」",
+                    url: "https://www.oricon.co.jp/news/2377803/full/",
+                    概要: "漫画『ウマ娘 シンデレラグレイ』作者・久住太陽氏が、自身のXを更新し、ウマ娘キャラと使った『メダリスト』で話題となった「見なよ…」イラストを投稿した。",
+                    配信日: "2025年4月4日",
+                    hidden: false
+                },
+                {
+                    title: "『ウマ娘』新アニメ話題 トレンド1位で令和に「オグリキャップ」再ブーム「名乗る時のカットが」「体感5分」",
+                    url: "https://www.oricon.co.jp/news/2378126/",
+                    概要: "テレビアニメ『ウマ娘 シンデレラグレイ』第1話が6日、TBS系(分割2クールにて放送)で放送された。Xでは、「#シングレ」「オグリキャップ」など関連ワードがトレンド入りした",
+                    配信日: "2025年4月6日",
+                    hidden: false
+                },
+                {
+                    title: "Travis Japan松田元太、映画『たべっ子どうぶつ』らいおんくんと登場 “松田節”でアピール「全人類楽しんでいただける」",
+                    url: "https://www.oricon.co.jp/news/2377820/full/",
+                    概要: "Travis Japanの松田元太が7日、都内で行われた『たべっ子どうぶつ THE MOVIE』(5月1日公開）の完成披露試写会に登場。自身が声優を務めた“らいおんくん”らどうぶつたちとともに登場して観客を沸かせた。",
+                    配信日: "2025年4月7日",
+                    hidden: false
+                },
+                {
+                    title: "東野圭吾氏『クスノキの番人』、2026年にアニメーション映画化 東野作品では初【コメント全文】",
+                    url: "https://www.oricon.co.jp/news/2378341/",
+                    概要: "小説家・東野圭吾氏の小説『クスノキの番人』がアニメーション映画化されることが決定した。東野氏の作品のアニメーション映画化は本作が初めてとなる。",
+                    配信日: "2025年4月8日",
+                    hidden: false
+                },
+                {
+                    title: "高橋文哉&原田泰造&麻生久美子、20年後の野原家に 初の『クレヨンしんちゃん』実写化ショートムービー",
+                    url: "https://www.oricon.co.jp/news/2378243/",
+                    概要: "テレビアニメ『クレヨンしんちゃん』が「やかんの麦茶 from 爽健美茶」とタッグを組んだ、クレヨンしんちゃん初の実写化ショートムービーが9日、公開された。",
+                    配信日: "2025年4月9日",
+                    hidden: false
+                },
+                {
+                    title: "「ルックバック」にグランプリ　第3回新潟国際アニメーション映画祭",
+                    url: "http://animationbusiness.info/archives/16606",
+                    概要: "長編アニメーションにフォーカスした国際映画祭として注目される第3回新潟国際アニメーション映画祭が2025年3月15日から20日までの6日間、新潟市内で開催された。最終日となった20日のクロージングセレモニーでは、アニメーションの技術職を対象にしたアワード大川博賞・蕗谷虹児賞の授賞式、さらに映画祭の目玉となる長編コンペティションの発表、授賞も行われた。",
+                    配信日: "2025年4月9日",
+                    hidden: false
+                },
+                {
+                    title: "KeyHolderグループが映画配給事業スタート　アドバイザーに井上伸一郎氏",
+                    url: "http://animationbusiness.info/archives/16603",
+                    概要: "映像番組制作などのエンタテイメント企業KeyHolderグループが、映画配給に進出する。同グループの番組制作会社UNITED PRODUCTIONSは、2025年4月1日付で映画配給事業を開始し、配給レーベル「KeyHolder Pictures」を設立した。",
+                    配信日: "2025年4月8日",
+                    hidden: false
+                },
+                {
+                    title: "【2025年冬アニメ総括】冬アニメは”4強”が圧倒！サブスクごとの人気作品と視聴傾向を徹底分析",
+                    url: "https://gamebiz.jp/news/403222",
+                    概要: "2025年の冬アニメでは、「SAKAMOTO DAYS」「薬屋のひとりごと」「シャングリラ・フロンティア」「俺だけレベルアップな件」が各配信サービスで圧倒的な人気を誇った。一方で、「いずれ最強の錬金術師？」「没落予定の貴族だけど、暇だったから魔法を極めてみた」などの異世界作品も安定した人気を維持。本稿ではdアニメストア、DMM TV、ABEMAの傾向を見ながら、2025年冬の人気作を振り返る。", // Slightly shortened overview
+                    配信日: "2025年3月29日",
+                    hidden: false
+                },
+                {
+                    title: "ハリウッドとCG映画合作した唯一の日本CGアニメ会社MARZA。ソニック1000億円興行はどうやって実現したのか 中山淳雄の「推しもオタクもグローバル」第116回",
+                    url: "https://gamebiz.jp/news/403398",
+                    概要: "『Sonic the Hedgehog 3』は興行収入700億円超え。『The Super Mario Bros. Movie』に次ぐ日本IP映画の成果。セガ自身が参画し「日本企業が参画して世界映像市場を獲った作品」。制作に関与したMARZAの視点から「日本IPのハリウッド映画化」についてインタビュー。", // Shortened overview
+                    配信日: "2025年4月4日",
+                    hidden: false
+                },
+                {
+                    title: "ヒット作はコナン､ハイキュー!!､ガンダム…｢観客動員数5000万人減｣の映画館がアニメばかりになった理由",
+                    url: "https://president.jp/articles/-/93534",
+                    概要: "クリント・イーストウッド監督最新作『陪審員2番』が日本ではU-NEXT配信のみに。監督作が映画館で公開されないのは51年ぶり。背景には日本における外国映画の著しい不調がある。",
+                    配信日: "2025年3月30日",
+                    hidden: false
+                },
+                {
+                    title: "ＡＩ、アニメ・漫画キャラ生成＝原作と「ほぼ同一」事例も―著作権侵害に懸念・開発各社",
+                    url: "https://biz-journal.jp/it/post_387253.html",
+                    概要: "生成ＡＩサービスで誰でもアニメや漫画のキャラを作れるが、既存キャラとほぼ同一のものが生成され著作権侵害の懸念が高まる。オープンＡＩは「チャットＧＰＴ」に画像生成の新機能を加え、ジブリ風画像などが拡散。権利侵害の歯止めは疑問視されている。",
+                    配信日: "2025年3月30日",
+                    hidden: false
+                },
+                {
+                    title: "アニメが好調!?　～映画業界の動向～",
+                    url: "https://www.meti.go.jp/statistics/toppage/report/minikaisetsu/hitokoto_kako/20250404hitokoto.html",
+                    概要: "2024年は「名探偵コナン １００万ドルの五稜星」や「劇場版ハイキュー！！ゴミ捨て場の決戦」が興収１００億円超え。邦画実写も健闘したが、洋画は１００億円超え作品なし。映画業界の動向をみる。",
+                    配信日: "2025年4月4日",
+                    hidden: false
+                },
+                {
+                    title: "金融の力でコンテンツ産業に革新を。〈みずほ〉が立ち上げるアニメ映画ファンド",
+                    url: "https://www.mizuho-fg.co.jp/journal/articles/konna02_anime/index.html",
+                    概要: "アニメ映画に新しい資金調達の道を開き、日本のアニメ産業を盛り上げるため、〈みずほ〉がアニメ映画に出資するファンド「Talent of Talents」を設立。クエストリーとみずほ証券が連携し、金融の仕組みで製作費用を集め、より大きな予算の作品制作や機会創出を目指す。",
+                    配信日: "2025年4月4日",
+                    hidden: false
+                }
             ]
-        };
+        }; // <-- Make sure this closing brace is correct
 
         const newsContainer = document.getElementById('news-container');
         const dateDropdown = document.getElementById('date-dropdown');
@@ -417,6 +559,7 @@
             }
         }
 
+        // Sort dates for dropdown after potential initialization from localStorage or newsData
         const sortedDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
         sortedDates.forEach(date => {
             const option = document.createElement('option');
@@ -429,32 +572,33 @@
             newsContainer.innerHTML = '';
             if (selectedDate && groupedNews[selectedDate]) {
                 groupedNews[selectedDate].forEach(news => {
-                     if (!news.hidden) { // hidden プロパティが false の場合のみ表示
-                         const newsCard = document.createElement('div');
-                         newsCard.className = 'news-card';
+                    if (!news.hidden) { // hidden プロパティが false の場合のみ表示
+                        const newsCard = document.createElement('div');
+                        newsCard.className = 'news-card';
 
-                         const titleElement = document.createElement('h2');
-                         titleElement.textContent = news.title;
+                        const titleElement = document.createElement('h2');
+                        titleElement.textContent = news.title;
 
-                         const summaryElement = document.createElement('p');
-                         summaryElement.textContent = news.概要;
+                        const summaryElement = document.createElement('p');
+                        summaryElement.textContent = news.概要;
 
-                         const linkElement = document.createElement('a');
-                         linkElement.href = news.url;
-                         linkElement.textContent = '続きを読む';
-                         linkElement.target = appendTimestamp(news.url); // キャッシュバスター
-                         linkElement.target = '_blank';
+                        const linkElement = document.createElement('a');
+                        linkElement.href = news.url;
+                        linkElement.textContent = '続きを読む';
+                        // Removed the timestamp append logic for simplicity, can be added back if needed
+                        // linkElement.target = appendTimestamp(news.url); // キャッシュバスター
+                        linkElement.target = '_blank'; // Open in new tab
 
-                         const publishDateElement = document.createElement('p');
-                         publishDateElement.className = 'publish-date';
-                         publishDateElement.textContent = `配信日：${news.配信日}`;
+                        const publishDateElement = document.createElement('p');
+                        publishDateElement.className = 'publish-date';
+                        publishDateElement.textContent = `配信日：${news.配信日}`;
 
-                         newsCard.appendChild(titleElement);
-                         newsCard.appendChild(summaryElement);
-                         newsCard.appendChild(linkElement);
-                         newsCard.appendChild(publishDateElement);
-                         newsContainer.appendChild(newsCard);
-                     }
+                        newsCard.appendChild(titleElement);
+                        newsCard.appendChild(summaryElement);
+                        newsCard.appendChild(linkElement);
+                        newsCard.appendChild(publishDateElement);
+                        newsContainer.appendChild(newsCard);
+                    }
                 });
             } else if (selectedDate) {
                 newsContainer.innerHTML = '<p class="text-gray-500 text-center">該当する日付のニュースはありません。</p>';
@@ -463,7 +607,8 @@
             }
         }
 
-        displayNews(null);
+        // Don't display news initially, wait for window.onload
+        // displayNews(null);
 
         dateDropdown.addEventListener('change', (event) => {
             const selectedDate = event.target.value;
@@ -473,10 +618,10 @@
         adminButton.addEventListener('click', () => {
             adminPanel.classList.add('show');
             populateNewsList();
-            newsListContainer.classList.add('show'); // Ensure list is shown initially
-            toggleNewsListButton.textContent = '非表示'; // Set button text
-            isNewsListVisible = true;
+            newsListContainer.classList.toggle('show', isNewsListVisible); // Ensure list visibility matches state
+            toggleNewsListButton.textContent = isNewsListVisible ? '非表示' : '表示'; // Set button text correctly
         });
+
 
         closeAdminPanelButton.addEventListener('click', () => {
             adminPanel.classList.remove('show');
@@ -493,36 +638,34 @@
             const title = document.getElementById('news-title').value;
             const url = document.getElementById('news-url').value;
             const summary = document.getElementById('news-summary').value;
-            // Format the publish date to YYYY年M月D日 or similar consistent format if needed
-            // For now, keeping the input format. Consider using a date library for robust parsing/formatting.
             const publishDateInput = document.getElementById('news-publish-date').value;
-            // Example basic formatting (adjust as needed):
-            // const dateObj = new Date(publishDateInput);
-            // const publishDate = !isNaN(dateObj) ? `${dateObj.getFullYear()}年${dateObj.getMonth() + 1}月${dateObj.getDate()}日` : publishDateInput;
-            const publishDate = publishDateInput; // Keep input value for now
+
+            // Format the publish date to YYYY年M月D日 or similar for display consistency
+            let publishDateDisplay = publishDateInput; // Default to input value
+            try {
+                const dateObj = new Date(publishDateInput + 'T00:00:00'); // Add time to avoid timezone issues
+                 if (!isNaN(dateObj.getTime())) {
+                     publishDateDisplay = `${dateObj.getFullYear()}年${dateObj.getMonth() + 1}月${dateObj.getDate()}日`;
+                 }
+            } catch(e) {
+                console.warn("Could not format display date from input:", publishDateInput);
+            }
 
             // Find the correct news item to edit across all dates
             let originalDate = null;
             let actualIndexInDate = -1;
             if (editingIndex !== null) {
-                let currentGlobalIndex = 0;
-                for (const d in groupedNews) {
-                    for (let i = 0; i < groupedNews[d].length; i++) {
-                        if (currentGlobalIndex === editingIndex) {
-                            originalDate = d;
-                            actualIndexInDate = i;
-                            break;
-                        }
-                        currentGlobalIndex++;
-                    }
-                    if (originalDate) break;
+                const newsInfo = getNewsByGlobalIndex(editingIndex);
+                if (newsInfo) {
+                    originalDate = newsInfo.date;
+                    actualIndexInDate = newsInfo.indexInDate;
                 }
             }
 
 
             if (editingIndex !== null && originalDate !== null && actualIndexInDate !== -1) {
                 // Editing existing news
-                const newsItem = { title, url, 概要: summary, 配信日: publishDate, hidden: groupedNews[originalDate][actualIndexInDate].hidden };
+                const newsItem = { title, url, 概要: summary, 配信日: publishDateDisplay, hidden: groupedNews[originalDate][actualIndexInDate].hidden };
 
                 if (originalDate === date) {
                     // Date hasn't changed, just update in place
@@ -532,11 +675,13 @@
                     groupedNews[originalDate].splice(actualIndexInDate, 1);
                     if (groupedNews[originalDate].length === 0) {
                         delete groupedNews[originalDate];
+                        // Optionally remove date from dropdown if it becomes empty
                     }
                     if (!groupedNews[date]) {
                         groupedNews[date] = [];
                     }
-                    groupedNews[date].push(newsItem);
+                    // Add to the beginning of the new date array for visibility
+                    groupedNews[date].unshift(newsItem);
                 }
                  messageContainer.textContent = 'ニュースを編集しました。';
                  addNewsForm.querySelector('button[type="submit"]').textContent = '追加'; // Reset button text
@@ -544,12 +689,13 @@
 
             } else {
                 // Adding new news
-                const newNews = { title, url, 概要: summary, 配信日: publishDate, hidden: false };
-                if (groupedNews[date]) {
-                    groupedNews[date].push(newNews);
-                } else {
-                    groupedNews[date] = [newNews];
+                const newNews = { title, url, 概要: summary, 配信日: publishDateDisplay, hidden: false };
+                if (!groupedNews[date]) {
+                    groupedNews[date] = [];
+                    // Add the new date to the dropdown (will be handled by updateDateDropdown)
                 }
+                 // Add to the beginning of the array so it appears first for that date
+                 groupedNews[date].unshift(newNews);
                 messageContainer.textContent = 'ニュースを追加しました。';
             }
 
@@ -567,11 +713,17 @@
             updateDateDropdown(); // Update dropdown options in case dates were added/removed
              // Refresh display with the currently selected date, or the added/edited date
             const currentSelectedDate = dateDropdown.value;
-            displayNews(currentSelectedDate && groupedNews[currentSelectedDate] ? currentSelectedDate : date);
-             // Optionally set the dropdown to the new/edited date
-             if (groupedNews[date] && (!currentSelectedDate || currentSelectedDate !== date)) {
+            const dateToDisplay = (editingIndex === null) ? date : (groupedNews[currentSelectedDate] ? currentSelectedDate : date);
+
+            // Set dropdown to the added/edited date if it's new or changed
+             if (groupedNews[date] && dateDropdown.value !== date) {
                  dateDropdown.value = date;
              }
+             displayNews(dateDropdown.value); // Display based on the final dropdown value
+
+
+             // Hide message after a few seconds
+             setTimeout(() => { messageContainer.textContent = ''; }, 3000);
 
         });
 
@@ -582,6 +734,9 @@
             const sortedAdminDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
 
             sortedAdminDates.forEach(date => {
+                 // Sort news within each date if needed (e.g., by publish date) - Optional
+                 // groupedNews[date].sort((a, b) => new Date(formatInputDate(b.配信日)) - new Date(formatInputDate(a.配信日)));
+
                  groupedNews[date].forEach(news => {
                     const listItem = document.createElement('li');
                     listItem.className = 'border-b py-2 flex justify-between items-center';
@@ -619,6 +774,9 @@
              // Restore selection if the date still exists
              if (groupedNews[currentSelectedValue]) {
                  dateDropdown.value = currentSelectedValue;
+             } else if (sortedDisplayDates.length > 0 && !currentSelectedValue) {
+                 // If nothing was selected (or selection deleted), select the latest date
+                 // dateDropdown.value = sortedDisplayDates[0]; // Optionally auto-select latest
              }
         }
 
@@ -641,25 +799,32 @@
         // Define handlers outside to easily remove/add listeners
         function handleEditClick(event) {
             const index = parseInt(event.target.dataset.index);
-            editingIndex = index; // Use the global index for editing state
-            const newsToEdit = getNewsByGlobalIndex(index); // Use the function that understands global index
-            if (newsToEdit) {
-                document.getElementById('news-date').value = newsToEdit.date; // The date the news belongs to
-                document.getElementById('news-title').value = newsToEdit.title;
-                document.getElementById('news-url').value = newsToEdit.url;
-                document.getElementById('news-summary').value = newsToEdit.概要;
+            const newsToEditInfo = getNewsByGlobalIndex(index); // Use the function that understands global index
+
+            if (newsToEditInfo) {
+                editingIndex = index; // Set editing index only if found
+                document.getElementById('news-date').value = newsToEditInfo.date; // The date the news belongs to
+                document.getElementById('news-title').value = newsToEditInfo.title;
+                document.getElementById('news-url').value = newsToEditInfo.url;
+                document.getElementById('news-summary').value = newsToEditInfo.概要;
                 // Ensure publish date is in YYYY-MM-DD for the input field
-                document.getElementById('news-publish-date').value = formatInputDate(newsToEdit.配信日);
+                document.getElementById('news-publish-date').value = formatInputDate(newsToEditInfo.配信日);
 
                 addNewsForm.querySelector('button[type="submit"]').textContent = '更新';
                 // No need to show admin panel again, it's already open
                 // Scroll form into view if needed
-                 addNewsForm.scrollIntoView({ behavior: 'smooth' });
+                 addNewsForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else {
                 messageContainer.textContent = "編集するニュースが見つかりませんでした。";
                 editingIndex = null; // Reset if not found
+                 // Clear form if edit target is invalid
+                addNewsForm.reset();
+                addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
+                 // Hide message after a few seconds
+                 setTimeout(() => { messageContainer.textContent = ''; }, 3000);
             }
         }
+
 
         function handleDeleteClick(event) {
              const indexToDelete = parseInt(event.target.dataset.index);
@@ -671,9 +836,14 @@
                     return; // Stop if user cancels
                 }
 
+                 // Remove the item
                  groupedNews[newsInfo.date].splice(newsInfo.indexInDate, 1);
+
+                 // Check if the date array is now empty
+                 let dateWasDeleted = false;
                  if (groupedNews[newsInfo.date].length === 0) {
                      delete groupedNews[newsInfo.date];
+                     dateWasDeleted = true;
                  }
 
                  try {
@@ -685,8 +855,18 @@
                  }
 
                  populateNewsList(); // Update admin list
-                 updateDateDropdown(); // Update dropdown
-                 displayNews(dateDropdown.value); // Refresh main display
+                 updateDateDropdown(); // Update dropdown (handles potential date removal)
+
+                 // Decide which date to display after deletion
+                 let dateToDisplay = dateDropdown.value; // Keep current selection if valid
+                 if (dateWasDeleted && dateToDisplay === newsInfo.date) {
+                     // If the currently selected date was deleted, try selecting the latest available date
+                     const latestAvailableDate = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a))[0];
+                     dateToDisplay = latestAvailableDate || ""; // Fallback to empty if no dates left
+                     dateDropdown.value = dateToDisplay;
+                 }
+                 displayNews(dateToDisplay); // Refresh main display
+
                  messageContainer.textContent = 'ニュースを削除しました。';
                  // Clear form if the deleted item was being edited
                  if (editingIndex === indexToDelete) {
@@ -695,8 +875,13 @@
                     addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
                  }
 
+                 // Hide message after a few seconds
+                 setTimeout(() => { messageContainer.textContent = ''; }, 3000);
+
              } else {
                  messageContainer.textContent = '削除するニュースが見つかりませんでした。';
+                  // Hide message after a few seconds
+                  setTimeout(() => { messageContainer.textContent = ''; }, 3000);
              }
         }
 
@@ -706,6 +891,7 @@
             let currentGlobalIndex = 0;
             const sortedAdminDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
             for (const date of sortedAdminDates) {
+                 // Optionally sort news within date here if needed for consistency with list order
                  for (let i = 0; i < groupedNews[date].length; i++) {
                      if (currentGlobalIndex === globalIndex) {
                          return {
@@ -724,25 +910,50 @@
          function formatInputDate(dateString) {
             if (!dateString) return '';
             try {
-                // Attempt to handle formats like "YYYY年M月D日", "YYYY.M.D", "YYYY-MM-DD"
-                const cleanedString = dateString.replace(/年|月/g, '-').replace(/日/g, '').replace(/\./g, '-');
-                const dateObj = new Date(cleanedString);
-                 if (isNaN(dateObj.getTime())) { // Check if date is valid
-                    // Try parsing as YYYYMMDD if previous failed
-                    if (/^\d{8}$/.test(dateString)) {
-                       const year = dateString.substring(0, 4);
-                       const month = dateString.substring(4, 6);
-                       const day = dateString.substring(6, 8);
-                       const directDate = new Date(`${year}-${month}-${day}`);
-                       if (!isNaN(directDate.getTime())) return `${year}-${month}-${day}`;
+                // Attempt to handle formats like "YYYY年M月D日", "YYYY.M.D", "YYYY-MM-DD", "YYYY/MM/DD"
+                // Normalize separators to '-'
+                const cleanedString = dateString.replace(/年|月/g, '-').replace(/日/g, '').replace(/\./g, '-').replace(/\//g, '-');
+
+                // Pad month and day if necessary (e.g., 2025-4-1 -> 2025-04-01)
+                const parts = cleanedString.split('-');
+                if (parts.length === 3) {
+                    const year = parts[0];
+                    const month = parts[1].padStart(2, '0');
+                    const day = parts[2].padStart(2, '0');
+                    const normalizedDateStr = `${year}-${month}-${day}`;
+
+                    // Final check if the normalized string represents a valid date
+                    const dateObj = new Date(normalizedDateStr + 'T00:00:00'); // Add time to avoid timezone issues
+                    if (!isNaN(dateObj.getTime())) {
+                       // Check if the formed date matches the input parts (e.g., avoid Feb 30 becoming Mar 1/2)
+                        if (dateObj.getFullYear() == year && (dateObj.getMonth() + 1) == parseInt(month) && dateObj.getDate() == parseInt(day)) {
+                            return normalizedDateStr;
+                        }
                     }
-                    console.warn("Could not parse date for input:", dateString);
-                    return ''; // Return empty if parsing fails
+                }
+
+                // Fallback: Try direct parsing if normalization failed or produced invalid date
+                const directDateObj = new Date(cleanedString + 'T00:00:00');
+                 if (!isNaN(directDateObj.getTime())) {
+                    const year = directDateObj.getFullYear();
+                    const month = String(directDateObj.getMonth() + 1).padStart(2, '0');
+                    const day = String(directDateObj.getDate()).padStart(2, '0');
+                    return `${year}-${month}-${day}`;
                  }
-                const year = dateObj.getFullYear();
-                const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-                const day = String(dateObj.getDate()).padStart(2, '0');
-                return `${year}-${month}-${day}`;
+
+
+                // Try parsing as YYYYMMDD if other attempts failed
+                 if (/^\d{8}$/.test(dateString)) {
+                    const year = dateString.substring(0, 4);
+                    const month = dateString.substring(4, 6);
+                    const day = dateString.substring(6, 8);
+                    const ymdDate = new Date(`${year}-${month}-${day}` + 'T00:00:00');
+                    if (!isNaN(ymdDate.getTime())) return `${year}-${month}-${day}`;
+                 }
+
+                console.warn("Could not parse date for input:", dateString);
+                return ''; // Return empty if parsing fails
+
             } catch (e) {
                 console.error("Error formatting date for input:", dateString, e);
                 return ''; // Return empty on error
@@ -756,42 +967,39 @@
             toggleNewsListButton.textContent = isNewsListVisible ? '非表示' : '表示';
         });
 
-        function appendTimestamp(url) {
-            const timestamp = new Date().getTime();
-            try {
-                const urlObj = new URL(url);
-                urlObj.searchParams.set('t', timestamp);
-                return urlObj.toString();
-            } catch (e) {
-                // Fallback for invalid URLs or environments without URL support
-                 if (url.indexOf('?') > -1) {
-                     return url + '&t=' + timestamp;
-                 } else {
-                     return url + '?t=' + timestamp;
-                 }
-            }
-        }
+        // Removed timestamp function as it's not currently used
+        // function appendTimestamp(url) { ... }
 
         window.onload = () => {
-            // Make sure groupedNews is populated before calling other functions
-             if (!localStorage.getItem('groupedNews')) {
-                localStorage.setItem('groupedNews', JSON.stringify(newsData));
-                groupedNews = newsData; // Use default data if nothing in localStorage
-             } else {
-                 groupedNews = JSON.parse(localStorage.getItem('groupedNews'));
+            // Load data from localStorage or use default newsData
+             try {
+                 const storedData = localStorage.getItem('groupedNews');
+                 if (storedData) {
+                    groupedNews = JSON.parse(storedData);
+                 } else {
+                    // If nothing in localStorage, initialize groupedNews with the default data
+                    groupedNews = JSON.parse(JSON.stringify(newsData)); // Deep copy
+                    // Optionally save the default data to localStorage immediately
+                    // localStorage.setItem('groupedNews', JSON.stringify(groupedNews));
+                 }
+             } catch (error) {
+                 console.error("Error loading or parsing localStorage data:", error);
+                 // Fallback to default data in case of parsing error
+                 groupedNews = JSON.parse(JSON.stringify(newsData));
              }
 
-            updateDateDropdown(); // Populate dropdown first
+            updateDateDropdown(); // Populate dropdown based on loaded groupedNews
+
             // Select the latest date by default if available
-             if (sortedDates.length > 0) {
-                 const latestDate = sortedDates[0]; // Assumes sortedDates is populated correctly
+            const allDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
+             if (allDates.length > 0) {
+                 const latestDate = allDates[0];
                  dateDropdown.value = latestDate;
                  displayNews(latestDate);
              } else {
                 displayNews(null); // Display initial message if no dates
              }
-            // Don't populate admin list on load, only when admin button is clicked
-             // populateNewsList();
+            // Admin list is populated only when the admin panel is opened
         };
     </script>
 </body>
