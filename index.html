@@ -139,7 +139,7 @@
             </form>
             <div id="message-container" class="mt-4 text-yellow-600 font-semibold"></div>
             <div id="news-list-container" class="mt-6">
-                <h3 class="text-lg font-semibold mb-2">登録済みニュース一覧</h3>
+                <h3 class="text-lg font-semibold mb-2">登録済みニュース一覧 (編集内容は一時的です)</h3> <!-- Updated title -->
                 <ul id="news-list" class="border rounded-md p-4">
                 </ul>
             </div>
@@ -149,8 +149,8 @@
     </div>
 
     <script>
-        // localStorageからニュースデータを読み込む
-        let newsData = JSON.parse(localStorage.getItem('newsData')) || {
+        // THIS IS THE MASTER DATA EMBEDDED IN THE HTML
+        const newsData = {
             "2025-03-21": [
                 {
                     title: "転スラ×ロボットの学習漫画 掲載内容発表!AI(人工知能)ってなに?危なくないの?",
@@ -247,7 +247,7 @@
                     title: "ABCテレビが日曜深夜にアニメ枠を新設決定、第一弾作品は『日々は過ぎれど飯うまし』！　アニメ放送枠のネーミングを一般公募実施",
                     url: "https://www.animatetimes.com/news/details.php?id=1741859016",
                     概要: "ABC朝日放送テレビが、毎週日曜深夜（時間未定）にアニメの放送に特化したアニメ番組枠を新設することを発表しました！",
-                    配信日: "2025年3月13日", // Corrected format
+                    配信日: "2025年3月13日",
                     hidden: false
                 },
                 {
@@ -282,14 +282,14 @@
                     title: "クリエイターが創作に没頭できる環境を―Creator's XがAI活用で挑むアニメ業界オープンイノベーション",
                     url: "https://prtimes.jp/main/html/rd/p/000000022.000109712.html",
                     概要: "生成AIの台頭によりクリエイティブ産業が大きく変わりつつある今、アニメ制作の現場にも変革の波が訪れています。Creator’s Xは「創るに没頭しよう」をビジョンに掲げ、AIをアニメーターのアシスタントとして活用する新しいアニメ制作の形を提案。",
-                    配信日: "2025年3月10日", // Corrected format
+                    配信日: "2025年3月10日",
                     hidden: false
                 },
                 {
                     title: "アニプレックスとCrunchyroll、共同出資によるアニメプロデュース会社「HAYATE」設立",
                     url: "https://branc.jp/article/2025/03/19/1483.html",
                     概要: "アニプレックスおよびCrunchyroll, LLCの二社は、共同出資によりHAYATEを設立したことを発表した。",
-                    配信日: "2025年3月19日", // Corrected format
+                    配信日: "2025年3月19日",
                     hidden: false
                 },
                 {
@@ -386,7 +386,6 @@
                     hidden: false
                 }
             ],
-            // --- NEW DATE CATEGORY AND NEWS ITEMS ADDED HERE ---
             "2025-04-11": [
                 {
                     title: "MAPPA、音楽レーベル「mappa records」設立 ライブ運営などにも挑戦「“心に残るアニメ”をお届けするために」",
@@ -489,14 +488,14 @@
                 {
                     title: "【2025年冬アニメ総括】冬アニメは”4強”が圧倒！サブスクごとの人気作品と視聴傾向を徹底分析",
                     url: "https://gamebiz.jp/news/403222",
-                    概要: "2025年の冬アニメでは、「SAKAMOTO DAYS」「薬屋のひとりごと」「シャングリラ・フロンティア」「俺だけレベルアップな件」が各配信サービスで圧倒的な人気を誇った。一方で、「いずれ最強の錬金術師？」「没落予定の貴族だけど、暇だったから魔法を極めてみた」などの異世界作品も安定した人気を維持。本稿ではdアニメストア、DMM TV、ABEMAの傾向を見ながら、2025年冬の人気作を振り返る。", // Slightly shortened overview
+                    概要: "2025年の冬アニメでは、「SAKAMOTO DAYS」「薬屋のひとりごと」「シャングリラ・フロンティア」「俺だけレベルアップな件」が各配信サービスで圧倒的な人気を誇った。一方で、「いずれ最強の錬金術師？」「没落予定の貴族だけど、暇だったから魔法を極めてみた」などの異世界作品も安定した人気を維持。本稿ではdアニメストア、DMM TV、ABEMAの傾向を見ながら、2025年冬の人気作を振り返る。",
                     配信日: "2025年3月29日",
                     hidden: false
                 },
                 {
                     title: "ハリウッドとCG映画合作した唯一の日本CGアニメ会社MARZA。ソニック1000億円興行はどうやって実現したのか 中山淳雄の「推しもオタクもグローバル」第116回",
                     url: "https://gamebiz.jp/news/403398",
-                    概要: "『Sonic the Hedgehog 3』は興行収入700億円超え。『The Super Mario Bros. Movie』に次ぐ日本IP映画の成果。セガ自身が参画し「日本企業が参画して世界映像市場を獲った作品」。制作に関与したMARZAの視点から「日本IPのハリウッド映画化」についてインタビュー。", // Shortened overview
+                    概要: "『Sonic the Hedgehog 3』は興行収入700億円超え。『The Super Mario Bros. Movie』に次ぐ日本IP映画の成果。セガ自身が参画し「日本企業が参画して世界映像市場を獲った作品」。制作に関与したMARZAの視点から「日本IPのハリウッド映画化」についてインタビュー。",
                     配信日: "2025年4月4日",
                     hidden: false
                 },
@@ -529,7 +528,10 @@
                     hidden: false
                 }
             ]
-        }; // <-- Make sure this closing brace is correct
+        };
+
+        // Global variable to hold the currently displayed news data
+        let groupedNews = {}; // Will be populated on window.onload
 
         const newsContainer = document.getElementById('news-container');
         const dateDropdown = document.getElementById('date-dropdown');
@@ -542,37 +544,20 @@
         const newsListContainer = document.getElementById('news-list-container');
         const toggleNewsListButton = document.getElementById('toggle-news-list');
 
+        let editingIndex = null; // Tracks the global index being edited in the admin panel
+        let isNewsListVisible = true; // Tracks visibility of the admin news list
 
-        let editingIndex = null;
-        let isNewsListVisible = true;
-
-        // groupedNewsを初期化
-        let groupedNews = {};
-
-        // localStorageにデータがあれば、それを読み込んでgroupedNewsを初期化
-        if (localStorage.getItem('groupedNews')) {
-            groupedNews = JSON.parse(localStorage.getItem('groupedNews'));
-        } else {
-            // localStorageにデータがない場合は、上記のnewsDataを使用
-            for (const date in newsData) {
-                groupedNews[date] = newsData[date];
-            }
-        }
-
-        // Sort dates for dropdown after potential initialization from localStorage or newsData
-        const sortedDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
-        sortedDates.forEach(date => {
-            const option = document.createElement('option');
-            option.value = date;
-            option.textContent = date;
-            dateDropdown.appendChild(option);
-        });
-
+        // Function to display news for a selected date
         function displayNews(selectedDate) {
-            newsContainer.innerHTML = '';
+            newsContainer.innerHTML = ''; // Clear previous news
             if (selectedDate && groupedNews[selectedDate]) {
-                groupedNews[selectedDate].forEach(news => {
-                    if (!news.hidden) { // hidden プロパティが false の場合のみ表示
+                // Sort news within the selected date (e.g., by publish date descending) - Optional but good practice
+                const sortedNewsForDate = groupedNews[selectedDate]
+                    .map(news => ({ ...news, sortDate: formatInputDate(news.配信日) || '0000-00-00' })) // Add a parseable date
+                    .sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate)); // Sort descending
+
+                sortedNewsForDate.forEach(news => {
+                    if (!news.hidden) { // Only show if not hidden
                         const newsCard = document.createElement('div');
                         newsCard.className = 'news-card';
 
@@ -585,9 +570,8 @@
                         const linkElement = document.createElement('a');
                         linkElement.href = news.url;
                         linkElement.textContent = '続きを読む';
-                        // Removed the timestamp append logic for simplicity, can be added back if needed
-                        // linkElement.target = appendTimestamp(news.url); // キャッシュバスター
                         linkElement.target = '_blank'; // Open in new tab
+                        linkElement.rel = 'noopener noreferrer'; // Security best practice
 
                         const publishDateElement = document.createElement('p');
                         publishDateElement.className = 'publish-date';
@@ -601,36 +585,60 @@
                     }
                 });
             } else if (selectedDate) {
+                // If date exists but has no visible news or doesn't exist in groupedNews
                 newsContainer.innerHTML = '<p class="text-gray-500 text-center">該当する日付のニュースはありません。</p>';
             } else {
+                // If no date is selected
                 newsContainer.innerHTML = '<p class="text-gray-500 text-center">日付を選択してください。</p>';
             }
         }
 
-        // Don't display news initially, wait for window.onload
-        // displayNews(null);
-
+        // Event listener for the date dropdown
         dateDropdown.addEventListener('change', (event) => {
             const selectedDate = event.target.value;
             displayNews(selectedDate);
         });
 
+        // Event listener for opening the admin panel
         adminButton.addEventListener('click', () => {
+            // When opening admin, load the *current* state from localStorage if it exists,
+            // otherwise use the initial data from the page load (already in groupedNews).
+            // This allows resuming temporary edits within the same browser session.
+            try {
+                const storedAdminData = localStorage.getItem('groupedNews');
+                if (storedAdminData) {
+                    // Make sure it's valid JSON before parsing
+                    groupedNews = JSON.parse(storedAdminData);
+                    console.log("Admin panel opened, loading temporary data from localStorage.");
+                } else {
+                     console.log("Admin panel opened, using initial page data (no temporary data found).");
+                     // groupedNews is already initialized from newsData on page load
+                }
+            } catch (error) {
+                 console.error("Error loading admin data from localStorage:", error);
+                 // Fallback to the data loaded initially from the page if localStorage is corrupt
+                 groupedNews = JSON.parse(JSON.stringify(newsData));
+            }
+
             adminPanel.classList.add('show');
-            populateNewsList();
-            newsListContainer.classList.toggle('show', isNewsListVisible); // Ensure list visibility matches state
-            toggleNewsListButton.textContent = isNewsListVisible ? '非表示' : '表示'; // Set button text correctly
+            populateNewsList(); // Populate list based on potentially updated groupedNews
+            newsListContainer.classList.toggle('show', isNewsListVisible);
+            toggleNewsListButton.textContent = isNewsListVisible ? '非表示' : '表示';
+            addNewsForm.reset(); // Clear form
+            editingIndex = null; // Reset editing state
+            addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
+            messageContainer.textContent = ''; // Clear messages
         });
 
 
+        // Event listener for closing the admin panel
         closeAdminPanelButton.addEventListener('click', () => {
             adminPanel.classList.remove('show');
-            editingIndex = null;
-            addNewsForm.reset(); // Clear the form
-            addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
-            messageContainer.textContent = ''; // Clear any messages
+            // No need to reset groupedNews here; changes are temporary anyway
+            // and will be overwritten on next page load or next admin open without localStorage data.
         });
 
+        // Event listener for submitting the add/edit news form
         addNewsForm.addEventListener('submit', (event) => {
             event.preventDefault();
 
@@ -640,18 +648,17 @@
             const summary = document.getElementById('news-summary').value;
             const publishDateInput = document.getElementById('news-publish-date').value;
 
-            // Format the publish date to YYYY年M月D日 or similar for display consistency
-            let publishDateDisplay = publishDateInput; // Default to input value
+            // Format the publish date for display consistency
+            let publishDateDisplay = publishDateInput;
             try {
-                const dateObj = new Date(publishDateInput + 'T00:00:00'); // Add time to avoid timezone issues
-                 if (!isNaN(dateObj.getTime())) {
-                     publishDateDisplay = `${dateObj.getFullYear()}年${dateObj.getMonth() + 1}月${dateObj.getDate()}日`;
-                 }
-            } catch(e) {
+                const dateObj = new Date(publishDateInput + 'T00:00:00');
+                if (!isNaN(dateObj.getTime())) {
+                    publishDateDisplay = `${dateObj.getFullYear()}年${dateObj.getMonth() + 1}月${dateObj.getDate()}日`;
+                }
+            } catch (e) {
                 console.warn("Could not format display date from input:", publishDateInput);
             }
 
-            // Find the correct news item to edit across all dates
             let originalDate = null;
             let actualIndexInDate = -1;
             if (editingIndex !== null) {
@@ -659,88 +666,80 @@
                 if (newsInfo) {
                     originalDate = newsInfo.date;
                     actualIndexInDate = newsInfo.indexInDate;
+                } else {
+                     messageContainer.textContent = '編集対象が見つかりません。新規追加として処理します。';
+                     editingIndex = null; // Treat as new add if index is broken
+                     addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
                 }
             }
 
-
             if (editingIndex !== null && originalDate !== null && actualIndexInDate !== -1) {
                 // Editing existing news
-                const newsItem = { title, url, 概要: summary, 配信日: publishDateDisplay, hidden: groupedNews[originalDate][actualIndexInDate].hidden };
+                const newsItem = { title, url, 概要: summary, 配信日: publishDateDisplay, hidden: groupedNews[originalDate][actualIndexInDate].hidden }; // Preserve hidden status
 
                 if (originalDate === date) {
-                    // Date hasn't changed, just update in place
                     groupedNews[originalDate][actualIndexInDate] = newsItem;
                 } else {
-                    // Date has changed, remove from old date and add to new date
                     groupedNews[originalDate].splice(actualIndexInDate, 1);
                     if (groupedNews[originalDate].length === 0) {
                         delete groupedNews[originalDate];
-                        // Optionally remove date from dropdown if it becomes empty
                     }
                     if (!groupedNews[date]) {
                         groupedNews[date] = [];
                     }
-                    // Add to the beginning of the new date array for visibility
-                    groupedNews[date].unshift(newsItem);
+                    groupedNews[date].unshift(newsItem); // Add to top of new date
                 }
-                 messageContainer.textContent = 'ニュースを編集しました。';
-                 addNewsForm.querySelector('button[type="submit"]').textContent = '追加'; // Reset button text
-                 editingIndex = null; // Reset editing index
+                messageContainer.textContent = 'ニュースを編集しました (一時的)。';
+                addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
+                editingIndex = null;
 
             } else {
                 // Adding new news
-                const newNews = { title, url, 概要: summary, 配信日: publishDateDisplay, hidden: false };
+                const newNews = { title, url, 概要: summary, 配信日: publishDateDisplay, hidden: false }; // New items are visible by default
                 if (!groupedNews[date]) {
                     groupedNews[date] = [];
-                    // Add the new date to the dropdown (will be handled by updateDateDropdown)
                 }
-                 // Add to the beginning of the array so it appears first for that date
-                 groupedNews[date].unshift(newNews);
-                messageContainer.textContent = 'ニュースを追加しました。';
+                groupedNews[date].unshift(newNews); // Add to top
+                messageContainer.textContent = 'ニュースを追加しました (一時的)。';
             }
 
-            // Save, reset form, update lists and display
+            // Save the *temporary* changes to localStorage for the admin session
             try {
                 localStorage.setItem('groupedNews', JSON.stringify(groupedNews));
+                 console.log("Temporary admin changes saved to localStorage.");
             } catch (error) {
-                console.error('localStorageへの保存に失敗しました:', error);
-                messageContainer.textContent = 'エラー：ニュースの保存に失敗しました。ブラウザの設定をご確認ください。';
-                return; // Stop if saving failed
+                console.error('localStorageへの一時保存に失敗しました:', error);
+                messageContainer.textContent = 'エラー：変更の一時保存に失敗しました。';
+                // Don't return, allow UI updates anyway
             }
 
             addNewsForm.reset();
-            populateNewsList();
-            updateDateDropdown(); // Update dropdown options in case dates were added/removed
-             // Refresh display with the currently selected date, or the added/edited date
-            const currentSelectedDate = dateDropdown.value;
-            const dateToDisplay = (editingIndex === null) ? date : (groupedNews[currentSelectedDate] ? currentSelectedDate : date);
+            populateNewsList(); // Update admin list with temporary changes
+            updateDateDropdown(); // Update dropdown if dates changed
 
-            // Set dropdown to the added/edited date if it's new or changed
-             if (groupedNews[date] && dateDropdown.value !== date) {
-                 dateDropdown.value = date;
-             }
-             displayNews(dateDropdown.value); // Display based on the final dropdown value
+            // IMPORTANT: The main news display (outside admin) IS NOT updated here
+            // because it reflects the source HTML data, not the temporary admin edits.
+            // displayNews(dateDropdown.value); // <-- DO NOT call this here
 
-
-             // Hide message after a few seconds
-             setTimeout(() => { messageContainer.textContent = ''; }, 3000);
-
+            // Hide message after a few seconds
+            setTimeout(() => { messageContainer.textContent = ''; }, 3000);
         });
 
+        // Function to populate the news list in the admin panel
         function populateNewsList() {
             newsList.innerHTML = '';
-            let globalIndex = 0; // Keep track of the global index across all dates
-            // Sort dates before iterating to ensure consistent order in the admin list
+            let globalIndex = 0;
             const sortedAdminDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
 
             sortedAdminDates.forEach(date => {
-                 // Sort news within each date if needed (e.g., by publish date) - Optional
-                 // groupedNews[date].sort((a, b) => new Date(formatInputDate(b.配信日)) - new Date(formatInputDate(a.配信日)));
+                 // Sort news within each date for consistent admin list order (e.g., by publish date)
+                 const sortedNewsForAdminDate = groupedNews[date]
+                    .map(news => ({ ...news, sortDate: formatInputDate(news.配信日) || '0000-00-00' }))
+                    .sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate));
 
-                 groupedNews[date].forEach(news => {
+                 sortedNewsForAdminDate.forEach(news => {
                     const listItem = document.createElement('li');
                     listItem.className = 'border-b py-2 flex justify-between items-center';
-                    // Display date clearly with the title
                     listItem.innerHTML = `
                         <div>
                             <p class="font-semibold ${news.hidden ? 'text-gray-400 line-through' : ''}">${news.title} (${date})</p>
@@ -752,153 +751,151 @@
                         </div>
                     `;
                     newsList.appendChild(listItem);
-                    globalIndex++; // Increment global index for the next item
+                    globalIndex++;
                  });
             });
 
-
-            addEventListenerToButtons(); // Re-attach listeners after repopulating
+            addEventListenerToButtons();
         }
 
-
+        // Function to update the main date dropdown options
         function updateDateDropdown() {
-            const currentSelectedValue = dateDropdown.value; // Preserve selection if possible
-            dateDropdown.innerHTML = '<option value="">日付を選択してください</option>';
-            const sortedDisplayDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
-            sortedDisplayDates.forEach(date => {
+            const currentSelectedValue = dateDropdown.value;
+            // Base the dropdown ONLY on the dates present in the original newsData from HTML
+            const initialDates = Object.keys(newsData).sort((a, b) => new Date(b) - new Date(a));
+
+            dateDropdown.innerHTML = '<option value="">日付を選択してください</option>'; // Clear existing options
+
+            initialDates.forEach(date => {
+                 // Only add dates that were originally in the HTML's newsData
                 const option = document.createElement('option');
                 option.value = date;
                 option.textContent = date;
                 dateDropdown.appendChild(option);
             });
-             // Restore selection if the date still exists
-             if (groupedNews[currentSelectedValue]) {
+
+             // Try to restore selection if it still exists in the original dates
+             if (newsData[currentSelectedValue]) {
                  dateDropdown.value = currentSelectedValue;
-             } else if (sortedDisplayDates.length > 0 && !currentSelectedValue) {
-                 // If nothing was selected (or selection deleted), select the latest date
-                 // dateDropdown.value = sortedDisplayDates[0]; // Optionally auto-select latest
+             } else if (initialDates.length > 0 && !currentSelectedValue) {
+                  // Optionally auto-select latest date from initial data if nothing was selected
+                 // dateDropdown.value = initialDates[0];
              }
         }
 
-
+        // Function to add event listeners to admin buttons
         function addEventListenerToButtons() {
             const editButtons = document.querySelectorAll('.edit-button');
             const deleteButtons = document.querySelectorAll('.delete-button');
 
             editButtons.forEach(button => {
-                button.removeEventListener('click', handleEditClick); // Remove old listener first
-                button.addEventListener('click', handleEditClick);   // Add new listener
+                button.removeEventListener('click', handleEditClick);
+                button.addEventListener('click', handleEditClick);
             });
 
             deleteButtons.forEach(button => {
-                 button.removeEventListener('click', handleDeleteClick); // Remove old listener
-                 button.addEventListener('click', handleDeleteClick);   // Add new listener
+                 button.removeEventListener('click', handleDeleteClick);
+                 button.addEventListener('click', handleDeleteClick);
             });
         }
 
-        // Define handlers outside to easily remove/add listeners
+        // Handler for clicking the edit button in admin list
         function handleEditClick(event) {
             const index = parseInt(event.target.dataset.index);
-            const newsToEditInfo = getNewsByGlobalIndex(index); // Use the function that understands global index
+            const newsToEditInfo = getNewsByGlobalIndex(index);
 
             if (newsToEditInfo) {
-                editingIndex = index; // Set editing index only if found
-                document.getElementById('news-date').value = newsToEditInfo.date; // The date the news belongs to
+                editingIndex = index;
+                document.getElementById('news-date').value = newsToEditInfo.date;
                 document.getElementById('news-title').value = newsToEditInfo.title;
                 document.getElementById('news-url').value = newsToEditInfo.url;
                 document.getElementById('news-summary').value = newsToEditInfo.概要;
-                // Ensure publish date is in YYYY-MM-DD for the input field
-                document.getElementById('news-publish-date').value = formatInputDate(newsToEditInfo.配信日);
-
+                document.getElementById('news-publish-date').value = formatInputDate(newsToEditInfo.配信日); // Format for input
                 addNewsForm.querySelector('button[type="submit"]').textContent = '更新';
-                // No need to show admin panel again, it's already open
-                // Scroll form into view if needed
-                 addNewsForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                addNewsForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else {
                 messageContainer.textContent = "編集するニュースが見つかりませんでした。";
-                editingIndex = null; // Reset if not found
-                 // Clear form if edit target is invalid
+                editingIndex = null;
                 addNewsForm.reset();
                 addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
-                 // Hide message after a few seconds
+                setTimeout(() => { messageContainer.textContent = ''; }, 3000);
+            }
+        }
+
+        // Handler for clicking the delete button in admin list
+        function handleDeleteClick(event) {
+            const indexToDelete = parseInt(event.target.dataset.index);
+            const newsInfo = getNewsByGlobalIndex(indexToDelete);
+
+            if (newsInfo && newsInfo.date && newsInfo.indexInDate !== -1 && groupedNews[newsInfo.date]) {
+                if (!confirm(`「${newsInfo.title}」を一時的に削除してもよろしいですか？ (ページ再読み込みで元に戻ります)`)) {
+                    return;
+                }
+
+                groupedNews[newsInfo.date].splice(newsInfo.indexInDate, 1);
+                if (groupedNews[newsInfo.date].length === 0) {
+                    delete groupedNews[newsInfo.date];
+                }
+
+                try {
+                    localStorage.setItem('groupedNews', JSON.stringify(groupedNews));
+                     console.log("Temporary admin deletion saved to localStorage.");
+                } catch (error) {
+                    console.error('localStorageへの一時保存に失敗しました:', error);
+                    messageContainer.textContent = 'エラー：削除の一時保存に失敗しました。';
+                    // Continue UI update even if save fails
+                }
+
+                populateNewsList(); // Update admin list
+                // Do NOT update the main dropdown based on temporary deletion
+                // updateDateDropdown(); // <-- No
+
+                messageContainer.textContent = 'ニュースを一時的に削除しました。';
+                if (editingIndex === indexToDelete) {
+                    editingIndex = null;
+                    addNewsForm.reset();
+                    addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
+                }
+                setTimeout(() => { messageContainer.textContent = ''; }, 3000);
+
+            } else {
+                messageContainer.textContent = '削除するニュースが見つかりませんでした。';
                  setTimeout(() => { messageContainer.textContent = ''; }, 3000);
             }
         }
 
-
-        function handleDeleteClick(event) {
-             const indexToDelete = parseInt(event.target.dataset.index);
-             const newsInfo = getNewsByGlobalIndex(indexToDelete); // Get date and index within date
-
-             if (newsInfo && newsInfo.date && newsInfo.indexInDate !== -1) {
-                // Confirm deletion
-                if (!confirm(`「${newsInfo.title}」を削除してもよろしいですか？`)) {
-                    return; // Stop if user cancels
-                }
-
-                 // Remove the item
-                 groupedNews[newsInfo.date].splice(newsInfo.indexInDate, 1);
-
-                 // Check if the date array is now empty
-                 let dateWasDeleted = false;
-                 if (groupedNews[newsInfo.date].length === 0) {
-                     delete groupedNews[newsInfo.date];
-                     dateWasDeleted = true;
-                 }
-
-                 try {
-                     localStorage.setItem('groupedNews', JSON.stringify(groupedNews));
-                 } catch (error) {
-                     console.error('localStorageへの保存に失敗しました:', error);
-                     messageContainer.textContent = 'エラー：ニュースの削除に失敗しました。ブラウザの設定をご確認ください。';
-                     return;
-                 }
-
-                 populateNewsList(); // Update admin list
-                 updateDateDropdown(); // Update dropdown (handles potential date removal)
-
-                 // Decide which date to display after deletion
-                 let dateToDisplay = dateDropdown.value; // Keep current selection if valid
-                 if (dateWasDeleted && dateToDisplay === newsInfo.date) {
-                     // If the currently selected date was deleted, try selecting the latest available date
-                     const latestAvailableDate = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a))[0];
-                     dateToDisplay = latestAvailableDate || ""; // Fallback to empty if no dates left
-                     dateDropdown.value = dateToDisplay;
-                 }
-                 displayNews(dateToDisplay); // Refresh main display
-
-                 messageContainer.textContent = 'ニュースを削除しました。';
-                 // Clear form if the deleted item was being edited
-                 if (editingIndex === indexToDelete) {
-                    editingIndex = null;
-                    addNewsForm.reset();
-                    addNewsForm.querySelector('button[type="submit"]').textContent = '追加';
-                 }
-
-                 // Hide message after a few seconds
-                 setTimeout(() => { messageContainer.textContent = ''; }, 3000);
-
-             } else {
-                 messageContainer.textContent = '削除するニュースが見つかりませんでした。';
-                  // Hide message after a few seconds
-                  setTimeout(() => { messageContainer.textContent = ''; }, 3000);
-             }
-        }
-
-
-        // Helper to get news details using the global index from the admin list
+        // Helper to get news details by global index from the current `groupedNews` state
         function getNewsByGlobalIndex(globalIndex) {
+             // This function now operates on the potentially modified 'groupedNews'
+             // used by the admin panel, which might differ from the initial page load data.
             let currentGlobalIndex = 0;
             const sortedAdminDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
             for (const date of sortedAdminDates) {
-                 // Optionally sort news within date here if needed for consistency with list order
-                 for (let i = 0; i < groupedNews[date].length; i++) {
+                 const sortedNewsForAdminDate = groupedNews[date]
+                    .map(news => ({ ...news, sortDate: formatInputDate(news.配信日) || '0000-00-00' }))
+                    .sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate)); // Ensure consistent order with list
+
+                 for (let i = 0; i < sortedNewsForAdminDate.length; i++) {
                      if (currentGlobalIndex === globalIndex) {
-                         return {
-                             date: date,
-                             indexInDate: i, // Index within the specific date array
-                             ...groupedNews[date][i] // Spread the rest of the news properties
-                         };
+                         // Find the original index in the unsorted groupedNews[date] array
+                         // This is complex because the admin list is sorted differently.
+                         // Simplification: Assume the edit/delete refers to the item *as currently displayed* in the admin list.
+                         // We need the original index within groupedNews[date] to modify it correctly.
+                         // Find the actual item in the original groupedNews[date] based on title/url perhaps?
+                         // Let's find it by title for now, assuming titles are unique within a date
+                         const itemToFind = sortedNewsForAdminDate[i];
+                         const originalIndex = groupedNews[date].findIndex(n => n.title === itemToFind.title && n.url === itemToFind.url);
+
+                         if (originalIndex !== -1) {
+                            return {
+                                date: date,
+                                indexInDate: originalIndex, // Use the index in the *original* array
+                                ...groupedNews[date][originalIndex]
+                            };
+                         } else {
+                             console.error("Could not find original item index for editing/deleting:", itemToFind);
+                             return null; // Item not found in original array, maybe deleted concurrently?
+                         }
                      }
                      currentGlobalIndex++;
                  }
@@ -906,100 +903,81 @@
             return null; // Not found
         }
 
-         // Helper function to format various date strings to YYYY-MM-DD for input[type=date]
-         function formatInputDate(dateString) {
-            if (!dateString) return '';
-            try {
-                // Attempt to handle formats like "YYYY年M月D日", "YYYY.M.D", "YYYY-MM-DD", "YYYY/MM/DD"
-                // Normalize separators to '-'
-                const cleanedString = dateString.replace(/年|月/g, '-').replace(/日/g, '').replace(/\./g, '-').replace(/\//g, '-');
 
-                // Pad month and day if necessary (e.g., 2025-4-1 -> 2025-04-01)
-                const parts = cleanedString.split('-');
-                if (parts.length === 3) {
-                    const year = parts[0];
-                    const month = parts[1].padStart(2, '0');
-                    const day = parts[2].padStart(2, '0');
-                    const normalizedDateStr = `${year}-${month}-${day}`;
-
-                    // Final check if the normalized string represents a valid date
-                    const dateObj = new Date(normalizedDateStr + 'T00:00:00'); // Add time to avoid timezone issues
-                    if (!isNaN(dateObj.getTime())) {
-                       // Check if the formed date matches the input parts (e.g., avoid Feb 30 becoming Mar 1/2)
-                        if (dateObj.getFullYear() == year && (dateObj.getMonth() + 1) == parseInt(month) && dateObj.getDate() == parseInt(day)) {
-                            return normalizedDateStr;
-                        }
-                    }
+        // Helper function to format date strings to YYYY-MM-DD for input[type=date]
+        function formatInputDate(dateString) {
+           if (!dateString) return '';
+           try {
+               // Handle "YYYY年M月D日" etc.
+               const cleanedString = dateString.replace(/年|月/g, '-').replace(/日/g, '').replace(/\./g, '-').replace(/\//g, '-');
+               const parts = cleanedString.split('-');
+               if (parts.length === 3) {
+                   const year = parts[0];
+                   const month = parts[1].padStart(2, '0');
+                   const day = parts[2].padStart(2, '0');
+                   const normalizedDateStr = `${year}-${month}-${day}`;
+                   const dateObj = new Date(normalizedDateStr + 'T00:00:00');
+                   if (!isNaN(dateObj.getTime()) && dateObj.getFullYear() == year && (dateObj.getMonth() + 1) == parseInt(month) && dateObj.getDate() == parseInt(day)) {
+                       return normalizedDateStr;
+                   }
+               }
+               // Fallback attempt for other formats
+               const directDateObj = new Date(cleanedString + 'T00:00:00');
+                if (!isNaN(directDateObj.getTime())) {
+                   const year = directDateObj.getFullYear();
+                   const month = String(directDateObj.getMonth() + 1).padStart(2, '0');
+                   const day = String(directDateObj.getDate()).padStart(2, '0');
+                   return `${year}-${month}-${day}`;
                 }
+               // Try YYYYMMDD
+                if (/^\d{8}$/.test(dateString)) {
+                   const year = dateString.substring(0, 4);
+                   const month = dateString.substring(4, 6);
+                   const day = dateString.substring(6, 8);
+                   const ymdDate = new Date(`${year}-${month}-${day}` + 'T00:00:00');
+                   if (!isNaN(ymdDate.getTime())) return `${year}-${month}-${day}`;
+                }
+               console.warn("Could not parse date for input:", dateString);
+               return '';
+           } catch (e) {
+               console.error("Error formatting date for input:", dateString, e);
+               return '';
+           }
+        }
 
-                // Fallback: Try direct parsing if normalization failed or produced invalid date
-                const directDateObj = new Date(cleanedString + 'T00:00:00');
-                 if (!isNaN(directDateObj.getTime())) {
-                    const year = directDateObj.getFullYear();
-                    const month = String(directDateObj.getMonth() + 1).padStart(2, '0');
-                    const day = String(directDateObj.getDate()).padStart(2, '0');
-                    return `${year}-${month}-${day}`;
-                 }
-
-
-                // Try parsing as YYYYMMDD if other attempts failed
-                 if (/^\d{8}$/.test(dateString)) {
-                    const year = dateString.substring(0, 4);
-                    const month = dateString.substring(4, 6);
-                    const day = dateString.substring(6, 8);
-                    const ymdDate = new Date(`${year}-${month}-${day}` + 'T00:00:00');
-                    if (!isNaN(ymdDate.getTime())) return `${year}-${month}-${day}`;
-                 }
-
-                console.warn("Could not parse date for input:", dateString);
-                return ''; // Return empty if parsing fails
-
-            } catch (e) {
-                console.error("Error formatting date for input:", dateString, e);
-                return ''; // Return empty on error
-            }
-         }
-
-
+        // Event listener for toggling the admin news list visibility
         toggleNewsListButton.addEventListener('click', () => {
             isNewsListVisible = !isNewsListVisible;
             newsListContainer.classList.toggle('show', isNewsListVisible);
             toggleNewsListButton.textContent = isNewsListVisible ? '非表示' : '表示';
         });
 
-        // Removed timestamp function as it's not currently used
-        // function appendTimestamp(url) { ... }
-
+        // Initial setup on page load
         window.onload = () => {
-            // Load data from localStorage or use default newsData
-             try {
-                 const storedData = localStorage.getItem('groupedNews');
-                 if (storedData) {
-                    groupedNews = JSON.parse(storedData);
-                 } else {
-                    // If nothing in localStorage, initialize groupedNews with the default data
-                    groupedNews = JSON.parse(JSON.stringify(newsData)); // Deep copy
-                    // Optionally save the default data to localStorage immediately
-                    // localStorage.setItem('groupedNews', JSON.stringify(groupedNews));
-                 }
-             } catch (error) {
-                 console.error("Error loading or parsing localStorage data:", error);
-                 // Fallback to default data in case of parsing error
-                 groupedNews = JSON.parse(JSON.stringify(newsData));
-             }
+            // *** CRITICAL CHANGE: ALWAYS load from embedded newsData on page load ***
+            try {
+                groupedNews = JSON.parse(JSON.stringify(newsData)); // Deep copy from HTML source
+                 console.log("Page loaded. Initializing news data from embedded HTML.");
+            } catch (error) {
+                console.error("Error initializing news data from embedded HTML:", error);
+                // Fallback to empty if newsData is somehow corrupt in HTML
+                groupedNews = {};
+            }
 
-            updateDateDropdown(); // Populate dropdown based on loaded groupedNews
+            // Populate dropdown based on the initial data loaded from HTML
+            updateDateDropdown();
 
-            // Select the latest date by default if available
-            const allDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
-             if (allDates.length > 0) {
-                 const latestDate = allDates[0];
-                 dateDropdown.value = latestDate;
-                 displayNews(latestDate);
-             } else {
-                displayNews(null); // Display initial message if no dates
-             }
-            // Admin list is populated only when the admin panel is opened
+            // Select and display the latest date from the initial data by default
+            const initialDates = Object.keys(groupedNews).sort((a, b) => new Date(b) - new Date(a));
+            if (initialDates.length > 0) {
+                const latestDate = initialDates[0];
+                if (!dateDropdown.value) { // Select latest only if nothing is pre-selected (e.g. by updateDateDropdown restoration)
+                    dateDropdown.value = latestDate;
+                }
+                displayNews(dateDropdown.value); // Display based on current dropdown value
+            } else {
+                displayNews(null); // Display initial message if no dates in HTML data
+            }
         };
     </script>
 </body>
